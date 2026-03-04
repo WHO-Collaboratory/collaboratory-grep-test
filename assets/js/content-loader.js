@@ -55,7 +55,9 @@ const Custom_ContentLoader = {
   findSec(sections, keyword) {
     return sections.find(s => s.title.toLowerCase().includes(keyword.toLowerCase()));
   },
-
+  findSecByIndex(sections, index) {
+    return sections[index];
+  },
   reObserve(container) {
     container.querySelectorAll('.reveal').forEach(el => {
       el.classList.remove('in-view');
@@ -169,16 +171,17 @@ const Custom_ContentLoader = {
   buildCommunity(md) {
     const dom  = this.mdDOM(md);
     const secs = this.h3Sections(dom);
+    console.log(secs);
     const cards = [];
 
-    // Cards 1 & 2: Community members
-    const members = this.findSec(secs, 'community member');
-    if (members) {
-      const paras = members.nodes.filter(n => n.tagName === 'P');
+    // Cards 1 : Resoruces
+    const res = this.findSecByIndex(secs, 0); // findSec(secs, 'community members');
+    if (res) {
+      const paras = res.nodes.filter(n => n.tagName === 'P');
       if (paras[0]) {
         cards.push(`
           <article class="card1 reveal d1">
-            <h3 class="card__title">Community Members</h3>
+            <h3 class="card__title">${res.title}</h3>
             <div class="card__text">${paras[0].innerHTML}</div>
           </article>`);
       }
@@ -190,35 +193,31 @@ const Custom_ContentLoader = {
           </article>`);
       }
     }
-
-    // Card 3: How to Join
-    const join = this.findSec(secs, 'how to join');
-    if (join) {
+    // Card 2: Activities
+    const Activities = this.findSecByIndex(secs, 1); // this.findSec(secs, 'how to join');
+    if (Activities) {
       cards.push(`
-        <article class="card1 reveal d3">
-          <h3 class="card__title">How to Join &amp; Contribute</h3>
-          <div class="card__text">${this.nodesHTML(join.nodes)}</div>
+        <article class="card1 reveal d2">
+          <h3 class="card__title">${Activities.title}</h3>
+          <div class="card__text">${this.nodesHTML(Activities.nodes)}</div>
         </article>`);
     }
 
-    // Card 4: Code of Conduct
-    // const conduct = this.findSec(secs, 'code of conduct');
-    // if (conduct) {
-    //   cards.push(`
-    //     <article class="card reveal d4">
-    //       <div class="card__icon icon-blue">📜</div>
-    //       <h3 class="card__title">Code of Conduct</h3>
-    //       <div class="card__text">${this.nodesHTML(conduct.nodes)}</div>
-    //     </article>`);
-    // }
-
-    // Card 5: Technical Working Group
-    const twg = this.findSec(secs, 'technical working group');
-    if (twg) {
+    // Card 3: How to Join
+    const join = this.findSecByIndex(secs, 2); // this.findSec(secs, 'how to join');
+    if (join) {
+      cards.push(`
+        <article class="card1 reveal d3">
+          <h3 class="card__title">${join.title}</h3>
+          <div class="card__text">${this.nodesHTML(join.nodes)}</div>
+        </article>`);
+    }
+    // Card 4: Grepi initiative
+    const grepi_Init = this.findSecByIndex(secs, 3); // this.findSec(secs, 'GREP initiative');
+    if (grepi_Init) {
       cards.push(`
         <article class="card1 card1--wide reveal d5">
-          <h3 class="card__title">Community Technical Working Group</h3>
-          <div class="card__text">${this.nodesHTML(twg.nodes)}</div>
+          <h3 class="card__title">${grepi_Init.title}</h3>
           <img src="assets/TWG.png" alt="Community Technical Working Group members" class="card__img" />
         </article>`);
     }
