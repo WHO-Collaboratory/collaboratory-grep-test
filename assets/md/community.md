@@ -1,14 +1,14 @@
 ## Community
 
-### Resources 
+### Challenge 
 
-The epidemiological parameter community is an inclusive, interdisciplinary and multisectoral global network of mathematical modelers, epidemiologists, librarians, information specialists, disease experts, decision makers and software developers. Community members span academia, NGOs, industry, and national and international public health agencies. The goals of the community are to collaboratively develop a global repository of epidemiological parameters as well as tools to support their use in analytical pipelines. 
+A major challenge to developing informed public health interventions and maintaining up to date mathematical models which are needed to guide decision making, especially for emerging and re-emerging diseases, is that the existing epidemiological parameter estimates are scattered throughout different sources which are often outdated, contextually opaque, lack standardised reporting, and are mostly accessible through the literature. As parameters can change over time, the identification of reliable parameter estimates often requires ongoing literature review as new information arises. It is time-consuming, challenging and often not feasible for every researcher to always stay up to date on the literature.
 
-### Activities
+### Our vision
 
-The community has a membership of +100 people, from institutions across the globe, including: CERN, data.org, Epicentre, European CDC, Gates Foundation, Hong Kong University, Imperial College London, John Hopkins University, London School of Hygiene and Tropical Medicine, Oxford University, Public Health Agency of Canada, United Kingdom Health Security Agency, University of Cape Town, University of Melbourne, Wellcome and more.
+Smth
 
-### Join and/or Contribute 
+### Join us and/or Contribute 
 
 This is an inclusive community opened to all who are interested in connecting, collaborating, learning, sharing insigts, resources, tools, best practices, thoughts and ideas with us in the epidemiological parameters area. If you would like to become a member of our community, you can do so by joining <a href="https://collaboratory.who.int/forum/c/epiparameter/6"> Collaboratory discussion forum</a> after creating your Collaboratory account (<a href="https://www.who.int/initiatives/collaboratory">Collaboratory Sign Up instructions</a>), and other digital environment resources. Please reach out to us at collaboratory@who.int for any questions you may have.
 
