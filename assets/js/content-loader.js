@@ -163,21 +163,6 @@ const Custom_ContentLoader = {
         <h3 class="card__title">${workshop ? workshop.title : '2024 In-Person Workshop'}</h3>
         ${reportLink}
         <img src="assets/Report.png" alt="Workshop meeting report" class="card__img" />
-        <p class="card__text" style="margin-top:1.25rem;font-weight:600;color:var(--navy);">Early-Stage Outbreak Analytics Hackathon</p>
-        <a href="https://www.youtube.com/watch?v=KsJ9iyBrCag" target="_blank" rel="noopener noreferrer" class="card__video" title="Watch on YouTube">
-          <img src="https://img.youtube.com/vi/KsJ9iyBrCag/hqdefault.jpg" alt="Hackathon — watch on YouTube" />
-          <div class="card__video__play">
-              <iframe
-                src="https://www.youtube.com/embed/KsJ9iyBrCag?si=Wdir8v5V-t8AXrHt"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-                style="position:absolute;inset:0;width:100%;height:100%;">
-              </iframe>
-          </div>
-        </a>
       </article>`);
 
     return cards.join('\n');
