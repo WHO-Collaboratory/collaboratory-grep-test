@@ -284,10 +284,10 @@
       margin-bottom: 0.7rem;
     }
     .section__title {
-      font-size: clamp(1.10rem, 2vw, 1.75rem);
+      font-size: clamp(1.4rem, 3vw, 1.75rem);
       font-weight: 900;
       color: var(--navy);
-      line-height: 1;
+      line-height: 1.2;
       margin-bottom: 0.9rem;
     }
     .rule {
@@ -858,10 +858,14 @@
       .cards, .news-grid, .resources-grid { grid-template-columns: 1fr; }
       .footer__inner { flex-direction: column; text-align: center; }
       .footer__nav { justify-content: center; }
+      .section { padding: 3rem clamp(1rem, 4vw, 2rem); }
+      .section__hd { margin-bottom: 2rem; }
     }
     @media (max-width: 480px) {
       .hero__cta { flex-direction: column; align-items: center; }
       .btn { width: 240px; text-align: center; }
+      .banner { gap: 1rem !important; }
+      .epi-logo { width: 2.5rem; height: 2.5rem; flex-shrink: 0; }
     }
 .banner {
   display: flex;
@@ -881,11 +885,10 @@
 }
 
 .banner__title {
-  font-size: clamp(2.25rem, 2vw, 2.55rem);
+  font-size: clamp(1.5rem, 5vw, 2.55rem);
   font-weight: 600;
   color: var(--navy);
   line-height: 1.15;
-  white-space: nowrap;
 }
   </style>
 </head>
@@ -971,9 +974,8 @@
 	            Parameters can be estimated from observations using a range of methods, from the very simple to highly complex, and can be reported in numerous ways throughout literature. 
             </p>
           </div>
-          </div>
 
-          <div class="about-video">        
+          <div class="about-video">
             <div style="position:relative;width:100%;aspect-ratio:16/9;margin-top:0.75rem;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
               <iframe
                 src="https://www.youtube.com/embed/KsJ9iyBrCag?si=Wdir8v5V-t8AXrHt"
