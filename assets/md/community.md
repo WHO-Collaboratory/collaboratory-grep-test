@@ -10,7 +10,7 @@ The community has a membership of +100 people, from institutions across the glob
 
 ### Join and/or Contribute 
 
-This is an inclusive community opened to all who that are interested in connecting, collaborating, learning, sharing insigts, resources, tools, best practices, thoughts and ideas with us in the epidemiological parameters area. If you would like to become a member of our community, you can do so by joining <a href="https://collaboratory.who.int/forum/c/epiparameter/6"> Collaboratory discussion forum</a> after creating your Collaboratory account (<a href="https://www.who.int/initiatives/collaboratory">Collaboratory Sign Up instructions</a>), and other digital environment resources. Please reach out to us at collaboratory@who.int for any questions you may have.
+This is an inclusive community opened to all who are interested in connecting, collaborating, learning, sharing insigts, resources, tools, best practices, thoughts and ideas with us in the epidemiological parameters area. If you would like to become a member of our community, you can do so by joining <a href="https://collaboratory.who.int/forum/c/epiparameter/6"> Collaboratory discussion forum</a> after creating your Collaboratory account (<a href="https://www.who.int/initiatives/collaboratory">Collaboratory Sign Up instructions</a>), and other digital environment resources. Please reach out to us at collaboratory@who.int for any questions you may have.
 
 
 ### GREP initiative
