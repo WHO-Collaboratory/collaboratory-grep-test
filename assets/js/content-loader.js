@@ -210,15 +210,15 @@ const Custom_ContentLoader = {
     }
 
     // Card 4: Code of Conduct
-    const conduct = this.findSec(secs, 'code of conduct');
-    if (conduct) {
-      cards.push(`
-        <article class="card reveal d4">
-          <div class="card__icon icon-blue">📜</div>
-          <h3 class="card__title">Code of Conduct</h3>
-          <div class="card__text">${this.nodesHTML(conduct.nodes)}</div>
-        </article>`);
-    }
+    // const conduct = this.findSec(secs, 'code of conduct');
+    // if (conduct) {
+    //   cards.push(`
+    //     <article class="card reveal d4">
+    //       <div class="card__icon icon-blue">📜</div>
+    //       <h3 class="card__title">Code of Conduct</h3>
+    //       <div class="card__text">${this.nodesHTML(conduct.nodes)}</div>
+    //     </article>`);
+    // }
 
     // Card 5: Technical Working Group
     const twg = this.findSec(secs, 'technical working group');
