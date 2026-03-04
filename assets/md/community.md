@@ -1,10 +1,10 @@
 ## Community
 
-### Challenge 
+### Global challenge 
 
 A major challenge to developing informed public health interventions and maintaining up to date mathematical models which are needed to guide decision making, especially for emerging and re-emerging diseases, is that the existing epidemiological parameter estimates are scattered throughout different sources which are often outdated, contextually opaque, lack standardised reporting, and are mostly accessible through the literature. As parameters can change over time, the identification of reliable parameter estimates often requires ongoing literature review as new information arises. It is time-consuming, challenging and often not feasible for every researcher to always stay up to date on the literature.
 
-### Our vision
+### Our focus
 
 Smth
 
