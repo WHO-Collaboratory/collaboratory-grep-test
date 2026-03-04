@@ -76,7 +76,6 @@ const Custom_ContentLoader = {
     if (overview) {
       cards.push(`
         <article class="card reveal d1">
-          <div class="card__icon icon-blue">🔬</div>
           <h3 class="card__title">${overview.title}</h3>
           <div class="card__text">${this.nodesHTML(overview.nodes)}</div>
         </article>`);
@@ -95,7 +94,6 @@ const Custom_ContentLoader = {
 
       cards.push(`
         <article class="card reveal d2">
-          <div class="card__icon icon-orange">🌐</div>
           <h3 class="card__title">Community Membership</h3>
           <div class="card__text">${this.nodesHTML(beforeH4)}</div>
           <img src="assets/WhodoesWhat.png" alt="Who does what — community roles" class="card__img" />
@@ -113,7 +111,6 @@ const Custom_ContentLoader = {
         linksHTML += '</div>';
         cards.push(`
           <article class="card reveal d3">
-            <div class="card__icon icon-gold">🔗</div>
             <h3 class="card__title">Key Initiatives</h3>
             <p class="card__text">Learn more about the initiatives that support and extend the work of this community:</p>
             ${linksHTML}
@@ -137,7 +134,6 @@ const Custom_ContentLoader = {
     }
     cards.push(`
       <article class="card card--wide reveal d4">
-        <div class="card__icon icon-blue">📊</div>
         <h3 class="card__title">${status ? status.title : 'Current Project Status'}</h3>
         <img src="assets/Sep2024Status.png" alt="Project status" class="card__img" />
         <p class="card__text" style="margin-top:1.1rem;font-weight:600;color:var(--navy);">Our Workstreams</p>
@@ -159,7 +155,6 @@ const Custom_ContentLoader = {
     }
     cards.push(`
       <article class="card card--wide reveal d5">
-        <div class="card__icon icon-orange">&#127963;</div>
         <h3 class="card__title">${workshop ? workshop.title : '2024 In-Person Workshop'}</h3>
         ${reportLink}
         <img src="assets/Report.png" alt="Workshop meeting report" class="card__img" />
@@ -183,7 +178,6 @@ const Custom_ContentLoader = {
       if (paras[0]) {
         cards.push(`
           <article class="card reveal d1">
-            <div class="card__icon icon-blue">🌐</div>
             <h3 class="card__title">Community Members</h3>
             <div class="card__text">${paras[0].innerHTML}</div>
           </article>`);
@@ -191,7 +185,6 @@ const Custom_ContentLoader = {
       if (paras[1]) {
         cards.push(`
           <article class="card reveal d2">
-            <div class="card__icon icon-orange">🏢</div>
             <h3 class="card__title">Our Global Network</h3>
             <div class="card__text">${paras[1].innerHTML}</div>
           </article>`);
@@ -203,7 +196,6 @@ const Custom_ContentLoader = {
     if (join) {
       cards.push(`
         <article class="card reveal d3">
-          <div class="card__icon icon-gold">🤝</div>
           <h3 class="card__title">How to Join &amp; Contribute</h3>
           <div class="card__text">${this.nodesHTML(join.nodes)}</div>
         </article>`);
@@ -225,7 +217,6 @@ const Custom_ContentLoader = {
     if (twg) {
       cards.push(`
         <article class="card card--wide reveal d5">
-          <div class="card__icon icon-orange">👥</div>
           <h3 class="card__title">Community Technical Working Group</h3>
           <div class="card__text">${this.nodesHTML(twg.nodes)}</div>
           <img src="assets/TWG.png" alt="Community Technical Working Group members" class="card__img" />
