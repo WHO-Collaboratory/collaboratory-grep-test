@@ -177,14 +177,14 @@ const Custom_ContentLoader = {
       const paras = members.nodes.filter(n => n.tagName === 'P');
       if (paras[0]) {
         cards.push(`
-          <article class="card reveal d1">
+          <article class="card1 reveal d1">
             <h3 class="card__title">Community Members</h3>
             <div class="card__text">${paras[0].innerHTML}</div>
           </article>`);
       }
       if (paras[1]) {
         cards.push(`
-          <article class="card reveal d2">
+          <article class="card1 reveal d2">
             <h3 class="card__title">Our Global Network</h3>
             <div class="card__text">${paras[1].innerHTML}</div>
           </article>`);
@@ -195,7 +195,7 @@ const Custom_ContentLoader = {
     const join = this.findSec(secs, 'how to join');
     if (join) {
       cards.push(`
-        <article class="card reveal d3">
+        <article class="card1 reveal d3">
           <h3 class="card__title">How to Join &amp; Contribute</h3>
           <div class="card__text">${this.nodesHTML(join.nodes)}</div>
         </article>`);
@@ -216,7 +216,7 @@ const Custom_ContentLoader = {
     const twg = this.findSec(secs, 'technical working group');
     if (twg) {
       cards.push(`
-        <article class="card card--wide reveal d5">
+        <article class="card1 card1--wide reveal d5">
           <h3 class="card__title">Community Technical Working Group</h3>
           <div class="card__text">${this.nodesHTML(twg.nodes)}</div>
           <img src="assets/TWG.png" alt="Community Technical Working Group members" class="card__img" />
