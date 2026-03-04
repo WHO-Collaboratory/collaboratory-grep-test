@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collaboratory</title>
-  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico">
+  <title>EpiParameters CoP</title>
+  <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
@@ -111,7 +111,7 @@
       position: absolute;
       bottom: 0; left: 1rem; right: 1rem;
       height: 2px;
-      background: var(--orange);
+      background: var(--gold);
       transform: scaleX(0);
       transform-origin: left;
       transition: transform 0.25s var(--ease);
@@ -220,9 +220,9 @@
       transition: all 0.25s var(--ease);
     }
     .btn-primary {
-      background: var(--orange);
+      background: var(--gold);
       color: var(--white);
-      border-color: var(--orange);
+      border-color: var(--gold);
     }
     .btn-navy:hover { background: var(--blue); color: var(--white); }
     .btn-navy { 
@@ -440,7 +440,7 @@
       line-height: 1.45;
       transition: color 0.2s ease;
     }
-    .card__links a::before { content: '→'; flex-shrink: 0; color: var(--orange); }
+    .card__links a::before { content: '→'; flex-shrink: 0; color: var(--gold); }
     .card__links a:hover { color: var(--navy); }
 
     /* YouTube thumbnail link (embedding disabled for this video) */
@@ -525,7 +525,7 @@
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--gold);
       margin-bottom: 0.4rem;
     }
     .news-card__title {
@@ -548,7 +548,7 @@
       display: flex;
       align-items: center;
       gap: 0.9rem;
-      background: linear-gradient(90deg, var(--gold), var(--orange));
+      background: linear-gradient(90deg, var(--gold), var(--gold));
       color: var(--white);
       padding: 0.85rem 1.4rem;
       border-radius: 8px;
@@ -608,15 +608,15 @@
       transition: background 0.2s ease, outline-color 0.2s ease;
     }
     .timeline-item:hover::before {
-      background: var(--orange);
-      outline-color: var(--orange);
+      background: var(--gold);
+      outline-color: var(--gold);
     }
     .timeline-item__date {
       font-size: 0.76rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--orange);
+      color: var(--gold);
       margin-bottom: 0.25rem;
     }
     .timeline-item__text {
@@ -636,7 +636,7 @@
       vertical-align: middle;
     }
     .tag-webinar   { background: rgba(0,154,222,0.12); color: var(--blue); }
-    .tag-inperson  { background: rgba(242,104,41,0.12); color: var(--orange); }
+    .tag-inperson  { background: rgba(242,104,41,0.12); color: var(--gold); }
     .tag-workshop  { background: rgba(244,168,29,0.15); color: #b07500; }
     .tag-consult   { background: rgba(0,32,92,0.08);   color: var(--navy); }
 
@@ -660,7 +660,7 @@
       transition: all 0.3s var(--ease);
     }
     .res-card:hover {
-      border-color: var(--orange);
+      border-color: var(--gold);
       box-shadow: 0 6px 24px rgba(242,104,41,0.1);
       transform: translateY(-3px);
     }
@@ -746,7 +746,7 @@
     .doc-badge-ext  { background: rgba(0,154,222,0.12); color: var(--blue); }
     .doc-badge-r    { background: rgba(23,121,186,0.1); color: #1779ba; }
     .doc-badge-rmd  { background: rgba(23,121,186,0.1); color: #1779ba; }
-    .doc-badge-html { background: rgba(242,104,41,0.1); color: var(--orange); }
+    .doc-badge-html { background: rgba(242,104,41,0.1); color: var(--gold); }
     .res-doc__name { font-size: 0.865rem; color: var(--black); flex: 1; line-height: 1.5; padding-top: 2px; }
     .res-doc__name a { color: var(--blue); transition: color 0.2s ease; }
     .res-doc__name a:hover { color: var(--navy); text-decoration: underline; }
@@ -965,8 +965,12 @@
               Mathematical models are indispensable tools for understanding, forecasting and mitigating the spread of infectious diseases. These models require reliable epidemiological parameter estimates - such as incubation periods, reproduction numbers and case fatality ratios - to simulate, infer and/or estimate disease transmission dynamics and evaluate intervention strategies.
             </p>
             <p class="section__lead ">
-              Epidemiological parameter estimates constitute essential inputs to infectious disease models used to quantify and predict disease spread and burden. These parameters underpin our ability to quantify and respond to disease outbreaks.
+              Epidemiological parameter estimates constitute essential inputs to infectious disease models. These parameters underpin our ability to quantify and respond to disease outbreaks.
             </p>
+            <p class="section__lead "> 
+	            Parameters can be estimated from observations using a range of methods, from the very simple to highly complex, and can be reported in numerous ways throughout literature. 
+            </p>
+          </div>
           </div>
 
           <div class="about-video">        
