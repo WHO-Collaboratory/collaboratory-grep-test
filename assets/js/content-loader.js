@@ -468,11 +468,11 @@ const Custom_ContentLoader = {
       }
 
       // News
-      const newsEl = document.getElementById('news-content');
-      if (newsEl) {
-        newsEl.innerHTML = this.buildNews(newsMd);
-        this.reObserve(newsEl);
-      }
+      // const newsEl = document.getElementById('news-content');
+      // if (newsEl) {
+      //   newsEl.innerHTML = this.buildNews(newsMd);
+      //   this.reObserve(newsEl);
+      // }
 
       // Resources
       const { bgRows, meetingSections } = this.parseResourcesMd(resourcesMd);
