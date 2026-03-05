@@ -13,7 +13,7 @@ Designing, building and maintaining of a living curated global repository of epi
 <br>
 <br>
 <p align="center">
-  <img src="/collaboratory-grep-test/assets/grepiFullLogo.png" width="600" align = "center">
+  <img src="assets/grepiFullLogo.png" width="600" align = "center">
 </p> 
 <br>
 <p>
