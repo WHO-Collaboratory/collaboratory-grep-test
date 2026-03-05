@@ -8,13 +8,16 @@ A major challenge to developing informed public health interventions and maintai
 
 Designing, building and maintaining of a living curated global repository of epidemiological parameters available as a digital public good for health for everyone to consult, use and contribute to. 
 <a href="https://who-collaboratory.github.io/collaboratory-grep-test/#initiative"> Learn more...</a>
-
+<br>
+<br>
+<br>
+<br>
 <p align="center">
-  <img src="https://github.com/WHO-Collaboratory/collaboratory-grep-test/blob/main/assets/grepiFullLogo.png" width="600" align = "center">
+  <img src="/assets/grepiFullLogo.png" width="600" align = "center">
 </p> 
-
+<br>
 <p>
-<a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI -></a>
+  <a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI -></a>
 </p> 
 
 <br clear="left"/> 

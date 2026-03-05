@@ -196,10 +196,12 @@ const Custom_ContentLoader = {
     // Card 2: Activities
     const Activities = this.findSecByIndex(secs, 1); // this.findSec(secs, 'how to join');
     if (Activities) {
+      const actTmp = document.createElement('div');
+      Activities.nodes.forEach(n => actTmp.appendChild(n.cloneNode(true)));
       cards.push(`
         <article class="card1 reveal d2">
           <h3 class="card__title">${Activities.title}</h3>
-          <div class="card__text">${this.nodesHTML(Activities.nodes)}</div>
+          <div class="card__text">${actTmp.innerHTML}</div>
         </article>`);
     }
 
