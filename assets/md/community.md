@@ -13,9 +13,11 @@ Designing, building and maintaining of a living curated global repository of epi
   <img src="https://github.com/WHO-Collaboratory/collaboratory-grep-test/blob/main/assets/grepiFullLogo.png" width="600" align = "center">
 </p> 
 
-<br clear="left"/> 
-
+<p align="center">
 <a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI -></a>
+</p> 
+
+<br clear="left"/> 
 
 
 ### Join us and/or Contribute 
