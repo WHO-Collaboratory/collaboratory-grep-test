@@ -13,14 +13,3 @@ Designing, building and maintaining of a living curated global repository of epi
 ### Join us and/or Contribute 
 
 This is an inclusive community opened to all who are interested in connecting, collaborating, learning, sharing insigts, resources, tools, best practices, thoughts and ideas with us in the epidemiological parameters area. If you would like to become a member of our community, you can do so by joining our discussions, accessing various resources such as webinar recordings <a href="https://collaboratory.who.int/forum/c/epiparameter/6"> in our dedicated space in Collaboratory discussion forum</a> after creating your Collaboratory account (<a href="https://www.who.int/initiatives/collaboratory">Sign Up instructions</a>). You can also reach out to us at collaboratory@who.int.
-
-
-### GREP initiative
-
-
-<p align="center">
-  <img src="https://github.com/WorldHealthOrganization/collaboratory-epiparameter-community/raw/main/docs/images/TWG.png" width="600" align = "left">
-b.com/WorldHealthOrganization/collaboratory-epiparameter-community/raw/main/docs/images/TWG.png" width="600" align = "left">
-</p>
-
-
