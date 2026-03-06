@@ -37,16 +37,32 @@ const Custom_ContentLoader = {
   h3Sections(dom) {
     const result = [];
     let cur = null;
+
     for (const node of dom.childNodes) {
       if (node.nodeType !== 1) continue;          // element nodes only
-      if (node.tagName === 'H2') continue;         // skip top-level heading
+      if (node.tagName === 'H2') continue;        // skip top-level heading
+
       if (node.tagName === 'H3') {
         if (cur) result.push(cur);
-        cur = { title: node.textContent.trim(), nodes: [] };
+
+        // keep original title logic
+        const title = node.textContent.trim();
+
+        // new: extract hyperlink if exists
+        const linkEl = node.querySelector('a');
+        const href = linkEl ? linkEl.getAttribute('href') : null;
+
+        cur = { 
+          title: title,
+          href: href,
+          nodes: []
+        };
+
       } else if (cur) {
         cur.nodes.push(node.cloneNode(true));
       }
     }
+
     if (cur) result.push(cur);
     return result;
   },
@@ -292,6 +308,46 @@ const Custom_ContentLoader = {
     return html;
   },
 
+  buildResources(md) {
+    const dom = this.mdDOM(md);
+    const secs = this.h3Sections(dom);
+
+    return this.buildCardsFromIndexes(secs, [0, 1, 2,3,4,5]);
+  },
+  
+  buildCardsFromIndexes(secs, indexes) {
+    const cards = [];
+
+    indexes.forEach(i => {
+      const sec = this.findSecByIndex(secs, i);
+      if (!sec) return;
+
+      console.log(sec);
+
+      const tmp = document.createElement('div');
+      sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
+
+      let titleHTML = "";
+
+      if (sec.title !== "NoTitle") {
+        if (sec.href) {
+          titleHTML = `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`;
+        } else {
+          titleHTML = `<h3 class="card__title">${sec.title}</h3>`;
+        }
+      }
+
+      cards.push(`
+        <article class="card1 reveal d1">
+          ${titleHTML}
+          <div class="card__text">${tmp.innerHTML}</div>
+        </article>
+      `);
+    });
+
+    return cards.join('\n');
+  },
+
   tagFromEvent(ev) {
     const d = (ev.descHTML + ' ' + ev.dateText).toLowerCase();
     if (d.includes('virtual webinar') || d.includes('virtual presentation') || d.includes('webinar'))
@@ -466,6 +522,12 @@ const Custom_ContentLoader = {
         commEl.innerHTML = this.buildCommunity(communityMd);
         this.reObserve(commEl);
       }
+      // Resources
+      const resEl = document.getElementById('resources-cards');
+      if (resEl) {
+        resEl.innerHTML = this.buildResources(resourcesMd);
+        this.reObserve(resEl);
+      }
 
       // News
       // const newsEl = document.getElementById('news-content');
@@ -475,21 +537,21 @@ const Custom_ContentLoader = {
       // }
 
       // Resources
-      const { bgRows, meetingSections } = this.parseResourcesMd(resourcesMd);
-      const { gridHTML, accordionHTML }  = this.buildResourcesHTML(bgRows, meetingSections);
+      // // const { bgRows, meetingSections } = this.parseResourcesMd(resourcesMd);
+      // // const { gridHTML, accordionHTML }  = this.buildResourcesHTML(bgRows, meetingSections);
 
-      const bgEl = document.getElementById('res-bg-grid');
-      if (bgEl) {
-        bgEl.innerHTML = gridHTML;
-        this.reObserve(bgEl);
-      }
+      // // const bgEl = document.getElementById('res-bg-grid');
+      // // if (bgEl) {
+      // //   bgEl.innerHTML = gridHTML;
+      // //   this.reObserve(bgEl);
+      // // }
 
-      const meetEl = document.getElementById('res-meeting-acc');
-      if (meetEl) {
-        meetEl.innerHTML = accordionHTML;
-        this.initAccordion(meetEl);
-        this.reObserve(meetEl);
-      }
+      // // const meetEl = document.getElementById('res-meeting-acc');
+      // // if (meetEl) {
+      // //   meetEl.innerHTML = accordionHTML;
+      // //   this.initAccordion(meetEl);
+      // //   this.reObserve(meetEl);
+      // // }
 
     } catch (err) {
       console.error('[content-loader]', err);
