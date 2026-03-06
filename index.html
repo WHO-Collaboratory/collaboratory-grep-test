@@ -856,7 +856,8 @@
     .footer {
       background: var(--navy);
       color: var(--white);
-      padding: 3rem clamp(1rem, 4vw, 3rem);
+      padding: 0.5rem clamp(1rem, 4vw, 3rem);
+      height: 100px;
     }
     .footer__inner {
       max-width: 1100px;
@@ -1003,12 +1004,109 @@
     #back-to-top:hover { background: var(--blue); }
     #back-to-top svg { width: 20px; height: 20px; }
 
-.banner__title {
-  font-size: clamp(1.5rem, 5vw, 2.55rem);
-  font-weight: 600;
-  color: var(--navy);
-  line-height: 1.15;
-}
+    .banner__title {
+      font-size: clamp(1.5rem, 5vw, 2.55rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+    }
+
+    .grepi-footer-container {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;  
+      
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-size: 12px;
+    }
+
+    /* Columns */
+
+    .grepi-footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .grepi-footer-column-wide {
+      min-width: 150px;
+    }
+
+    /* Collaboratory section */
+
+    .grepi-footer-collab {
+      display: flex;
+      flex-direction: column;
+      margin-top: -16px;
+    }
+
+    .grepi-footer-collab-logo {
+      height: 56px;
+    }
+
+    .grepi-footer-collab-text {
+      margin-left: 36px;
+      margin-top: -4px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    /* Titles */
+
+    .grepi-footer-title {
+      font-weight: bold;
+      font-size: 11px;
+    }
+
+    /* Links */
+
+    .grepi-footer-link {
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .grepi-footer-link a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .grepi-footer-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* WHO block */
+
+    .grepi-footer-who {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .grepi-footer-who-text {
+      font-size: 11px;
+      white-space: nowrap;
+      text-align: center;
+    }
+
+    .grepi-footer-who-text a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .grepi-footer-who-text a:hover {
+      text-decoration: underline;
+    }
+
+    .grepi-footer-who-logo {
+      height: 40px;
+      margin-top: 4px;
+    }
   </style>
 </head>
 <body>
@@ -1206,21 +1304,79 @@
        Footer
        ========================================== -->
   <footer class="footer">
-    <div class="footer__inner">
-      <a href="#hero">
-        <img src="assets/logo1.png" alt="Collab" class="footer__logo" />
-      </a>
-      <nav class="footer__nav" aria-label="Footer navigation">
-        <a href="#about">About</a>
-        <a href="#initiative">GREP initiative</a>
-        <a href="#community">Community</a>
-        <!-- <a href="#news">News</a> -->
-        <a href="#resources">Resources</a>
-        <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">
-            grEPI&nbsp;&#8599;
-        </a>
-      </nav>
-      <p class="footer__copy">&copy; 2026 Collab. All rights reserved.</p>
+    <div class="grepi-footer-container">
+
+      <div class="grepi-footer-collab">
+        <div>
+          <a href="https://www.who.int/initiatives/collaboratory"
+            target="_blank"
+            rel="noopener noreferrer">
+            <img src="assets/collab_logo_white.png"
+                alt="Collaboratory"
+                class="grepi-footer-collab-logo">
+          </a>
+        </div>
+
+        <div class="grepi-footer-collab-text">
+          A Laboratory for Pandemic and
+        </div>
+
+        <div class="grepi-footer-collab-text">
+          Epidemic Intelligence
+        </div>
+      </div>
+
+      <div class="grepi-footer-column grepi-footer-column-wide">
+        <div class="grepi-footer-title">Community of practice</div>
+
+        <div class="grepi-footer-link">
+          <a href="#community"
+            target="_blank"
+            rel="noopener noreferrer">
+            Epidemiological Parameters
+          </a>
+        </div>
+
+        <div class="grepi-footer-link">
+          <a href="#initiative"
+            target="_blank"
+            rel="noopener noreferrer">
+          GREP initiative
+          </a>
+        </div>
+      </div>
+
+      <div class="grepi-footer-column">
+        <div class="grepi-footer-who">
+          <div class="grepi-footer-who-text">
+            <a href="https://pandemichub.who.int/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Better data. Better analytics. Better decisions.
+            </a>
+          </div>
+
+          <img src="assets/WHO-EN-W-H.png"
+              alt="WHO"
+              class="grepi-footer-who-logo">
+        </div>
+      </div>
+
+      <div class="grepi-footer-column">
+        <div class="grepi-footer-title"><a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a></div>
+        <div class="grepi-footer-link"><a href="#about">Getting started</a></div>
+        <div class="grepi-footer-link"><a href="#initiative">Contributions</a></div>
+      </div>
+
+      <div class="grepi-footer-column">
+        <div class="grepi-footer-title">Contact us</div>
+        <div class="grepi-footer-link">
+          <a href="mailto:collaboratory@who.int">
+            collaboratory@who.int
+          </a>
+        </div>
+      </div>
+
     </div>
   </footer>
 
