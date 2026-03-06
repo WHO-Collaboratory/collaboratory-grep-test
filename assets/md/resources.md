@@ -34,7 +34,7 @@
 <a href="https://epiverse-trace.github.io/epiparameter/" target="_blank" rel="noopener noreferrer">epiparameter</a>  is an R package that contains a library of epidemiological parameters for infectious diseases as well as classes and helper functions to work with the data.
 
 ### [Systematic review of epidemiological parameters for measles](https://doi.org/10.17605/OSF.IO/7K4GU)
-Public Health Agency of Canada (PHAC)
+<br>Public Health Agency of Canada (PHAC)
 
 
 ### [Systematic review of transmission and modelling parameters of nine WHO blue-print priority pathogens](https://www.crd.york.ac.uk/PROSPERO/view/393345)
@@ -42,4 +42,4 @@ Imperial College London - Pathogen Epidemiology Review Group (PERG)
 
 
 ### [Highlight studies that estimate key epidemiological parameters for mpox](https://worldhealthorg.shinyapps.io/mpx_global/#sec-lit)
-Public Health Agency of Canada (PHAC) and World Health Organization (WHO)
+<br>Public Health Agency of Canada (PHAC) and World Health Organization (WHO)
