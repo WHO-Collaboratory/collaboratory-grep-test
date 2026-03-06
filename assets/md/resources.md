@@ -17,9 +17,8 @@
 </p> 
 
 <br>
-<br>
 
-<a href="https://mrc-ide.github.io/epireview/" target="_blank" rel="noopener noreferrer">epireview</a> is a tool to obtain the latest data, figures and tables from the Pathogen Epidemiology Review Group (PERG).This package also contains functions to update pathogen-specific databases with new data from peer-reviewed papers as they become available.
+<br><a href="https://mrc-ide.github.io/epireview/" target="_blank" rel="noopener noreferrer">epireview</a> is a tool to obtain the latest data, figures and tables from the Pathogen Epidemiology Review Group (PERG).This package also contains functions to update pathogen-specific databases with new data from peer-reviewed papers as they become available.
 
 ### NoTitle
 
