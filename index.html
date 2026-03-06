@@ -437,6 +437,11 @@
       grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 1.5rem;
     }
+    .cards-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
     .card {
       background: var(--white);
       border: 1.5px solid var(--border);
@@ -944,7 +949,7 @@
         margin-left: 0;
         border-bottom: none;
       }
-      .cards, .news-grid, .resources-grid { grid-template-columns: 1fr; }
+      .cards, .cards-4col, .news-grid, .resources-grid { grid-template-columns: 1fr; }
       .footer__inner { flex-direction: column; text-align: center; }
       .footer__nav { justify-content: center; }
       .section { padding: 3rem clamp(1rem, 4vw, 2rem); }
@@ -1270,7 +1275,7 @@
         <div class="rule"></div>
       </header>
 
-      <div class="cards" id="about-cards"></div>
+      <div id="initiative-cards"></div>
     </div>
   </section>
 

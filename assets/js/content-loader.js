@@ -307,7 +307,12 @@ const Custom_ContentLoader = {
 
     return html;
   },
+  buildInitiative(md) {
+    const dom = this.mdDOM(md);
+    const secs = this.h3Sections(dom);
 
+    return this.buildCardsFromIndexes4col(secs, [0, 1, 2, 3]);
+  },
   buildResources(md) {
     const dom = this.mdDOM(md);
     const secs = this.h3Sections(dom);
@@ -346,6 +351,37 @@ const Custom_ContentLoader = {
     });
 
     return cards.join('\n');
+  },
+
+  buildCardsFromIndexes4col(secs, indexes) {
+    const cards = [];
+
+    indexes.forEach(i => {
+      const sec = this.findSecByIndex(secs, i);
+      if (!sec) return;
+
+      const tmp = document.createElement('div');
+      sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
+
+      let titleHTML = "";
+
+      if (sec.title !== "NoTitle") {
+        if (sec.href) {
+          titleHTML = `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`;
+        } else {
+          titleHTML = `<h3 class="card__title">${sec.title}</h3>`;
+        }
+      }
+
+      cards.push(`
+        <article class="card reveal d1">
+          ${titleHTML}
+          <div class="card__text">${tmp.innerHTML}</div>
+        </article>
+      `);
+    });
+
+    return `<div class="cards-4col">${cards.join('\n')}</div>`;
   },
 
   tagFromEvent(ev) {
@@ -503,17 +539,24 @@ const Custom_ContentLoader = {
   async init() {
     try {
       const [aboutMd, communityMd, newsMd, resourcesMd] = await Promise.all([
-        this.fetchText('assets/md/about.md'),
+        this.fetchText('assets/md/initiative.md'),
         this.fetchText('assets/md/community.md'),
         this.fetchText('assets/md/news.md'),
         this.fetchText('assets/md/resources.md'),
       ]);
 
       // About
-      const aboutEl = document.getElementById('about-cards');
-      if (aboutEl) {
-        aboutEl.innerHTML = this.buildAbout(aboutMd);
-        this.reObserve(aboutEl);
+      // const aboutEl = document.getElementById('about-cards');
+      // if (aboutEl) {
+      //   aboutEl.innerHTML = this.buildAbout(aboutMd);
+      //   this.reObserve(aboutEl);
+      // }
+
+      // Initiative
+      const initEl = document.getElementById('initiative-cards');
+      if (initEl) {
+        initEl.innerHTML = this.buildInitiative(aboutMd);
+        this.reObserve(initEl);
       }
 
       // Community
@@ -522,6 +565,15 @@ const Custom_ContentLoader = {
         commEl.innerHTML = this.buildCommunity(communityMd);
         this.reObserve(commEl);
       }
+
+
+      // About
+      // const aboutEl = document.getElementById('about-cards');
+      // if (aboutEl) {
+      //   aboutEl.innerHTML = this.buildAbout(aboutMd);
+      //   this.reObserve(aboutEl);
+      // }
+
       // Resources
       const resEl = document.getElementById('resources-cards');
       if (resEl) {
