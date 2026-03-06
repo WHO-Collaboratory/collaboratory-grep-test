@@ -413,7 +413,7 @@
                   border-color 0.3s ease,
                   box-shadow 0.3s ease;
     }
-    .card1:has(iframe) { padding: 0; overflow: hidden; }
+    .card1:has(iframe), .card1:has(.card__pdf-preview) { padding: 0; overflow: hidden; }
     .card1 iframe,
     .card iframe {
       display: block;
@@ -452,7 +452,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
-    .card:has(iframe) { padding: 0; overflow: hidden; }
+    .card:has(iframe), .card:has(.card__pdf-preview) { padding: 0; overflow: hidden; }
     .card {
       background: var(--white);
       border: 1.5px solid var(--border);
@@ -499,6 +499,9 @@
       margin-bottom: 0.55rem;
       line-height: 1.25;
     }
+    .card__title a { color: LinkText; text-decoration: underline; }
+    .card__title a:visited { color: VisitedText; }
+    .card__title a:hover { color: ActiveText; }
     .card__text {
       font-size: 0.92rem;
       color: var(--black);
@@ -521,6 +524,34 @@
     .card__link:hover { gap: 0.6rem; color: var(--navy); }
 
     /* Card image */
+    .card__pdf-preview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      padding: 1.5rem 1rem;
+      border-radius: 10px;
+      background: #f7f9fc;
+      text-decoration: none;
+      color: var(--navy);
+      transition: background 0.2s ease;
+      box-sizing: border-box;
+    }
+    .card__pdf-preview:hover { background: #eef3fa; border-color: var(--blue); }
+    .card__pdf-icon { color: #e53e3e; }
+    .card__pdf-icon svg { width: 48px; height: 48px; }
+    .card__pdf-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      color: var(--navy);
+      text-transform: capitalize;
+    }
+    .card__pdf-open { font-size: 0.75rem; color: var(--blue); }
     .card__img {
       width: 100%;
       border-radius: 6px;

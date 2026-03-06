@@ -340,6 +340,34 @@ const Custom_ContentLoader = {
     return this.buildCardsFromIndexes(secs, [0, 1, 2,3,4,5]);
   },
   
+  replacePdfIframes(tmp) {
+    console.log(tmp);
+    tmp.querySelectorAll('iframe').forEach(iframe => {
+      const src = iframe.getAttribute('src') || '';
+      if (!src.toLowerCase().includes('.pdf')) return;
+
+      const fileName = src.split('/').pop().replace(/\.pdf$/i, '').replace(/[-_]/g, ' ');
+      const thumb = document.createElement('a');
+      thumb.href = src;
+      thumb.target = '_blank';
+      thumb.rel = 'noopener noreferrer';
+      thumb.className = 'card__pdf-preview';
+      thumb.innerHTML = `
+        <div class="card__pdf-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="9" y1="13" x2="15" y2="13"/>
+            <line x1="9" y1="17" x2="15" y2="17"/>
+          </svg>
+        </div>
+        <span class="card__pdf-label">${tmp.textContent}</span>
+        <span class="card__pdf-open">Download PDF ↗</span>
+      `;
+      iframe.replaceWith(thumb);
+    });
+  },
+
   buildCardsFromIndexes(secs, indexes) {
     const cards = [];
 
@@ -351,6 +379,8 @@ const Custom_ContentLoader = {
 
       const tmp = document.createElement('div');
       sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
+
+      this.replacePdfIframes(tmp);
 
       let titleHTML = "";
 
