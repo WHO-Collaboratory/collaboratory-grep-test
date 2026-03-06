@@ -1199,10 +1199,19 @@
 
   <script>
     (function () {
-      const btn   = document.getElementById('back-to-top');
-      const about = document.getElementById('about');
+      const btn    = document.getElementById('back-to-top');
+      const about  = document.getElementById('about');
+      const footer = document.querySelector('.footer');
       function update() {
         btn.classList.toggle('visible', window.scrollY >= about.offsetTop - 80);
+        const footerTop = footer.getBoundingClientRect().top;
+        const btnHeight = btn.offsetHeight;
+        const margin    = 32; // 2rem
+        if (footerTop < window.innerHeight) {
+          btn.style.bottom = (window.innerHeight - footerTop + margin) + 'px';
+        } else {
+          btn.style.bottom = margin + 'px';
+        }
       }
       window.addEventListener('scroll', update, { passive: true });
       update();
