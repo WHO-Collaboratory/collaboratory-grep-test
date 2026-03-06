@@ -18,7 +18,7 @@ Designing, building and maintaining of a living curated global repository of epi
 </p> 
 <br>
 <p>
-● <a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI</a>
+  <a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI</a>
 </p> 
 
 <br clear="left"/> 
