@@ -199,7 +199,6 @@ const Custom_ContentLoader = {
   buildCommunity(md) {
     const dom  = this.mdDOM(md);
     const secs = this.h3Sections(dom);
-    console.log(secs);
     const cards = [];
 
     // Cards 1 : Resoruces
@@ -322,9 +321,7 @@ const Custom_ContentLoader = {
   buildInitiative4Col(md) {
     const dom = this.mdDOM(md);
     let secs = this.h3Sections(dom);
-    console.log(secs);
     secs = secs.filter(section => section.custom === "4Col");
-    console.log(secs);
     return this.buildCardsFromIndexes4col(secs, [0, 1, 2, 3]);
   },
   buildInitiative3Col(md) {
@@ -341,7 +338,6 @@ const Custom_ContentLoader = {
   },
   
   replacePdfIframes(tmp) {
-    console.log(tmp);
     tmp.querySelectorAll('iframe').forEach(iframe => {
       const src = iframe.getAttribute('src') || '';
       if (!src.toLowerCase().includes('.pdf')) return;
@@ -374,8 +370,6 @@ const Custom_ContentLoader = {
     indexes.forEach(i => {
       const sec = this.findSecByIndex(secs, i);
       if (!sec) return;
-
-      console.log(sec);
 
       const tmp = document.createElement('div');
       sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
