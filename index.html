@@ -413,6 +413,16 @@
                   border-color 0.3s ease,
                   box-shadow 0.3s ease;
     }
+    .card1:has(iframe) { padding: 0; overflow: hidden; }
+    .card1 iframe,
+    .card iframe {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      border: none;
+      border-radius: 10px;
+    }
     .card1::before {
       content: '';
       position: absolute;
@@ -442,6 +452,7 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
+    .card:has(iframe) { padding: 0; overflow: hidden; }
     .card {
       background: var(--white);
       border: 1.5px solid var(--border);
@@ -1275,7 +1286,9 @@
         <div class="rule"></div>
       </header>
 
-      <div id="initiative-cards"></div>
+      <div id="initiative-4-cards"></div>
+      <br>
+      <div class="cards"id="initiative-3-cards"></div>
     </div>
   </section>
 

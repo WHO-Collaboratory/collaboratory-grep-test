@@ -32,29 +32,41 @@ const Custom_ContentLoader = {
     return tmp.innerHTML;
   },
 
-  // Extract sections delimited by H3 headings from a parsed MD DOM
-  // Returns: [{ title: string, nodes: Node[] }, ...]
   h3Sections(dom) {
     const result = [];
     let cur = null;
 
     for (const node of dom.childNodes) {
-      if (node.nodeType !== 1) continue;          // element nodes only
-      if (node.tagName === 'H2') continue;        // skip top-level heading
+      if (node.nodeType !== 1) continue; // element nodes only
+      if (node.tagName === 'H2') continue; // skip H2
 
       if (node.tagName === 'H3') {
         if (cur) result.push(cur);
 
-        // keep original title logic
-        const title = node.textContent.trim();
+        // original title
+        let title = node.textContent.trim();
 
-        // new: extract hyperlink if exists
+        // extract hyperlink if exists
         const linkEl = node.querySelector('a');
         const href = linkEl ? linkEl.getAttribute('href') : null;
 
-        cur = { 
-          title: title,
-          href: href,
+        // extract custom property
+        let customProp = node.getAttribute('data-custom') || null;
+
+        // fallback: try to parse inline attribute syntax {custom="value"}
+        if (!customProp) {
+          const match = title.match(/\{.*?custom\s*=\s*["'](.*?)["'].*?\}$/);
+          if (match) {
+            customProp = match[1];
+            // optionally remove inline attribute from title
+            title = title.replace(/\{.*\}$/, '').trim();
+          }
+        }
+
+        cur = {
+          title,
+          href,
+          custom: customProp,
           nodes: []
         };
 
@@ -307,11 +319,19 @@ const Custom_ContentLoader = {
 
     return html;
   },
-  buildInitiative(md) {
+  buildInitiative4Col(md) {
     const dom = this.mdDOM(md);
-    const secs = this.h3Sections(dom);
-
+    let secs = this.h3Sections(dom);
+    console.log(secs);
+    secs = secs.filter(section => section.custom === "4Col");
+    console.log(secs);
     return this.buildCardsFromIndexes4col(secs, [0, 1, 2, 3]);
+  },
+  buildInitiative3Col(md) {
+    const dom = this.mdDOM(md);
+    let secs = this.h3Sections(dom);
+    secs = secs.filter(section => section.custom === "3Col");
+    return this.buildCardsFromIndexes(secs, [0, 1, 2]);
   },
   buildResources(md) {
     const dom = this.mdDOM(md);
@@ -553,10 +573,15 @@ const Custom_ContentLoader = {
       // }
 
       // Initiative
-      const initEl = document.getElementById('initiative-cards');
+      const initEl = document.getElementById('initiative-4-cards');
       if (initEl) {
-        initEl.innerHTML = this.buildInitiative(aboutMd);
+        initEl.innerHTML = this.buildInitiative4Col(aboutMd);
         this.reObserve(initEl);
+      }
+      const initEl2 = document.getElementById('initiative-3-cards');
+      if (initEl2) {
+        initEl2.innerHTML = this.buildInitiative3Col(aboutMd);
+        this.reObserve(initEl2);
       }
 
       // Community
