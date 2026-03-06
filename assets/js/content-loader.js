@@ -413,6 +413,8 @@ const Custom_ContentLoader = {
       const tmp = document.createElement('div');
       sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
 
+      this.replacePdfIframes(tmp);
+
       let titleHTML = "";
 
       if (sec.title !== "NoTitle") {
