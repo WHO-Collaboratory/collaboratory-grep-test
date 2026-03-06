@@ -3,9 +3,10 @@
 ### NoTitle
 
 <p align="center">
-  <img src="assets/grepiResourceLogoPic.png" width="600" align = "center">
+  <img src="assets/grepiResourceLogoPic.png" style="width:92%;margin: auto;" align = "center">
 </p> 
 
+<br>
 <br>
 
 <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a> is the global repository of epidemiological parameters hosted by the World Health Organization.
@@ -13,7 +14,7 @@
 ### NoTitle
 
 <p align="center">
-  <img src="assets/epireviewResourceLogoPic.png" width="600" align = "center">
+  <img src="assets/epireviewResourceLogoPic.png" style="width:100%;margin: auto;" align = "center">
 </p> 
 
 <br>
@@ -23,9 +24,10 @@
 ### NoTitle
 
 <p align="center">
-  <img src="assets/epiparameterResourceLogoPic.png" width="600" align = "center">
+  <img src="assets/epiparameterResourceLogoPic.png" style="width:92%;margin: auto;" align = "center">
 </p> 
 
+<br>
 <br>
 
 <a href="https://epiverse-trace.github.io/epiparameter/" target="_blank" rel="noopener noreferrer">epiparameter</a>  is an R package that contains a library of epidemiological parameters for infectious diseases as well as classes and helper functions to work with the data.
