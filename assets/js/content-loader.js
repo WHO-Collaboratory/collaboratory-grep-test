@@ -1,7 +1,5 @@
 const Custom_ContentLoader = {
 
-  // ── Utilities ─────────────────────────────────────────────────
-
   revealIO: new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) {
@@ -17,14 +15,12 @@ const Custom_ContentLoader = {
     return r.text();
   },
 
-  // Parse Markdown text into a temporary DOM container
   mdDOM(text) {
     const el = document.createElement('div');
     el.innerHTML = marked.parse(text);
     return el;
   },
 
-  // Return innerHTML of a list of nodes with all <img> removed
   nodesHTML(nodes) {
     const tmp = document.createElement('div');
     nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
@@ -37,38 +33,26 @@ const Custom_ContentLoader = {
     let cur = null;
 
     for (const node of dom.childNodes) {
-      if (node.nodeType !== 1) continue; // element nodes only
-      if (node.tagName === 'H2') continue; // skip H2
+      if (node.nodeType !== 1) continue;
+      if (node.tagName === 'H2') continue;
 
       if (node.tagName === 'H3') {
         if (cur) result.push(cur);
 
-        // original title
         let title = node.textContent.trim();
-
-        // extract hyperlink if exists
         const linkEl = node.querySelector('a');
         const href = linkEl ? linkEl.getAttribute('href') : null;
 
-        // extract custom property
         let customProp = node.getAttribute('data-custom') || null;
-
-        // fallback: try to parse inline attribute syntax {custom="value"}
         if (!customProp) {
           const match = title.match(/\{.*?custom\s*=\s*["'](.*?)["'].*?\}$/);
           if (match) {
             customProp = match[1];
-            // optionally remove inline attribute from title
             title = title.replace(/\{.*\}$/, '').trim();
           }
         }
 
-        cur = {
-          title,
-          href,
-          custom: customProp,
-          nodes: []
-        };
+        cur = { title, href, custom: customProp, nodes: [] };
 
       } else if (cur) {
         cur.nodes.push(node.cloneNode(true));
@@ -79,13 +63,14 @@ const Custom_ContentLoader = {
     return result;
   },
 
-  // Find first section whose title contains keyword (case-insensitive)
   findSec(sections, keyword) {
     return sections.find(s => s.title.toLowerCase().includes(keyword.toLowerCase()));
   },
+
   findSecByIndex(sections, index) {
     return sections[index];
   },
+
   reObserve(container) {
     container.querySelectorAll('.reveal').forEach(el => {
       el.classList.remove('in-view');
@@ -93,15 +78,11 @@ const Custom_ContentLoader = {
     });
   },
 
-
-  // About
-
   buildAbout(md) {
     const dom  = this.mdDOM(md);
     const secs = this.h3Sections(dom);
     const cards = [];
 
-    //  Card 1: Overview
     const overview = this.findSec(secs, 'overview');
     if (overview) {
       cards.push(`
@@ -111,10 +92,8 @@ const Custom_ContentLoader = {
         </article>`);
     }
 
-    // Cards 2 & 3: Community Membership + Key Initiatives
     const membership = this.findSec(secs, 'community membership');
     if (membership) {
-      // Split nodes at the H4 ("Learn more about the initiatives")
       const beforeH4 = [], afterH4 = [];
       let pastH4 = false;
       for (const n of membership.nodes) {
@@ -129,7 +108,6 @@ const Custom_ContentLoader = {
           <img src="assets/WhodoesWhat.png" alt="Who does what — community roles" class="card__img" />
         </article>`);
 
-      // Card 3: links from the #### section
       if (afterH4.length) {
         const linksDiv = document.createElement('div');
         afterH4.forEach(n => linksDiv.appendChild(n.cloneNode(true)));
@@ -148,19 +126,15 @@ const Custom_ContentLoader = {
       }
     }
 
-    // Card 4 (wide): Project Status + Workstreams
     const status     = this.findSec(secs, 'project status');
     const workstreams = this.findSec(secs, 'workstream');
     let wsDescHTML = '';
     if (workstreams) {
       const wsTmp = document.createElement('div');
       workstreams.nodes.forEach(n => wsTmp.appendChild(n.cloneNode(true)));
-      const wDivs = wsTmp.querySelectorAll('[id^="w"]');
-      if (wDivs.length) {
-        wDivs.forEach(d => {
-          wsDescHTML += `<p class="card__text" style="margin-top:0.6rem;">${d.textContent.trim()}</p>`;
-        });
-      }
+      wsTmp.querySelectorAll('[id^="w"]').forEach(d => {
+        wsDescHTML += `<p class="card__text" style="margin-top:0.6rem;">${d.textContent.trim()}</p>`;
+      });
     }
     cards.push(`
       <article class="card card--wide reveal d4">
@@ -171,7 +145,6 @@ const Custom_ContentLoader = {
         ${wsDescHTML}
       </article>`);
 
-    // ── Card 5 2024 Workshop + Hackathon
     const workshop = this.findSec(secs, 'workshop');
     let reportLink = '';
     if (workshop) {
@@ -193,16 +166,12 @@ const Custom_ContentLoader = {
     return cards.join('\n');
   },
 
-
-  // Community
-
   buildCommunity(md) {
     const dom  = this.mdDOM(md);
     const secs = this.h3Sections(dom);
     const cards = [];
 
-    // Cards 1 : Resoruces
-    const res = this.findSecByIndex(secs, 0); // findSec(secs, 'community members');
+    const res = this.findSecByIndex(secs, 0);
     if (res) {
       const paras = res.nodes.filter(n => n.tagName === 'P');
       if (paras[0]) {
@@ -220,20 +189,19 @@ const Custom_ContentLoader = {
           </article>`);
       }
     }
-    // Card 2: Activities
-    const Activities = this.findSecByIndex(secs, 1); // this.findSec(secs, 'how to join');
-    if (Activities) {
+
+    const activities = this.findSecByIndex(secs, 1);
+    if (activities) {
       const actTmp = document.createElement('div');
-      Activities.nodes.forEach(n => actTmp.appendChild(n.cloneNode(true)));
+      activities.nodes.forEach(n => actTmp.appendChild(n.cloneNode(true)));
       cards.push(`
         <article class="card1 reveal d2">
-          <h3 class="card__title">${Activities.title}</h3>
+          <h3 class="card__title">${activities.title}</h3>
           <div class="card__text">${actTmp.innerHTML}</div>
         </article>`);
     }
 
-    // Card 3: How to Join
-    const join = this.findSecByIndex(secs, 2); // this.findSec(secs, 'how to join');
+    const join = this.findSecByIndex(secs, 2);
     if (join) {
       cards.push(`
         <article class="card1 reveal d3">
@@ -241,21 +209,18 @@ const Custom_ContentLoader = {
           <div class="card__text">${this.nodesHTML(join.nodes)}</div>
         </article>`);
     }
-    // Card 4: Grepi initiative
-    const grepi_Init = this.findSecByIndex(secs, 3); // this.findSec(secs, 'GREP initiative');
-    if (grepi_Init) {
+
+    const grepiInit = this.findSecByIndex(secs, 3);
+    if (grepiInit) {
       cards.push(`
         <article class="card1 card1--wide reveal d5">
-          <h3 class="card__title">${grepi_Init.title}</h3>
+          <h3 class="card__title">${grepiInit.title}</h3>
           <img src="assets/TWG.png" alt="Community Technical Working Group members" class="card__img" />
         </article>`);
     }
 
     return cards.join('\n');
   },
-
-
-  // NEWS
 
   buildNews(md) {
     const dom       = this.mdDOM(md);
@@ -265,14 +230,10 @@ const Custom_ContentLoader = {
 
     listItems.forEach(li => {
       const strong = li.querySelector('strong');
-      if (!strong) {
-        notices.push(li.textContent.trim());
-        return;
-      }
+      if (!strong) { notices.push(li.textContent.trim()); return; }
       const dateText = strong.textContent.trim();
       const descHTML = li.innerHTML.replace(/<strong>[^<]*<\/strong>\s*:?\s*/, '').trim();
-      const isNotice = descHTML.toLowerCase().includes('see you again');
-      if (isNotice) {
+      if (descHTML.toLowerCase().includes('see you again')) {
         notices.push(dateText + ': ' + descHTML.replace(/<[^>]+>/g, ''));
       } else {
         events.push({ dateText, descHTML });
@@ -313,30 +274,30 @@ const Custom_ContentLoader = {
             <p class="timeline-item__text">${ev.descHTML}</p>
           </div>`;
       });
-      html += `</div>`;
+      html += '</div>';
     });
 
     return html;
   },
+
   buildInitiative4Col(md) {
     const dom = this.mdDOM(md);
-    let secs = this.h3Sections(dom);
-    secs = secs.filter(section => section.custom === "4Col");
+    const secs = this.h3Sections(dom).filter(s => s.custom === '4Col');
     return this.buildCardsFromIndexes4col(secs, [0, 1, 2, 3]);
   },
+
   buildInitiative3Col(md) {
     const dom = this.mdDOM(md);
-    let secs = this.h3Sections(dom);
-    secs = secs.filter(section => section.custom === "3Col");
+    const secs = this.h3Sections(dom).filter(s => s.custom === '3Col');
     return this.buildCardsFromIndexes(secs, [0, 1, 2]);
   },
-  buildResources(md) {
-    const dom = this.mdDOM(md);
-    const secs = this.h3Sections(dom);
 
-    return this.buildCardsFromIndexes(secs, [0, 1, 2,3,4,5]);
+  buildResources(md) {
+    const dom  = this.mdDOM(md);
+    const secs = this.h3Sections(dom);
+    return this.buildCardsFromIndexes(secs, [0, 1, 2, 3, 4, 5]);
   },
-  
+
   replacePdfIframes(tmp) {
     tmp.querySelectorAll('iframe').forEach(iframe => {
       const src = iframe.getAttribute('src') || '';
@@ -366,24 +327,19 @@ const Custom_ContentLoader = {
 
   buildCardsFromIndexes(secs, indexes) {
     const cards = [];
-
     indexes.forEach(i => {
       const sec = this.findSecByIndex(secs, i);
       if (!sec) return;
 
       const tmp = document.createElement('div');
       sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
-
       this.replacePdfIframes(tmp);
 
-      let titleHTML = "";
-
-      if (sec.title !== "NoTitle") {
-        if (sec.href) {
-          titleHTML = `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`;
-        } else {
-          titleHTML = `<h3 class="card__title">${sec.title}</h3>`;
-        }
+      let titleHTML = '';
+      if (sec.title !== 'NoTitle') {
+        titleHTML = sec.href
+          ? `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`
+          : `<h3 class="card__title">${sec.title}</h3>`;
       }
 
       cards.push(`
@@ -393,30 +349,24 @@ const Custom_ContentLoader = {
         </article>
       `);
     });
-
     return cards.join('\n');
   },
 
   buildCardsFromIndexes4col(secs, indexes) {
     const cards = [];
-
     indexes.forEach(i => {
       const sec = this.findSecByIndex(secs, i);
       if (!sec) return;
 
       const tmp = document.createElement('div');
       sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
-
       this.replacePdfIframes(tmp);
 
-      let titleHTML = "";
-
-      if (sec.title !== "NoTitle") {
-        if (sec.href) {
-          titleHTML = `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`;
-        } else {
-          titleHTML = `<h3 class="card__title">${sec.title}</h3>`;
-        }
+      let titleHTML = '';
+      if (sec.title !== 'NoTitle') {
+        titleHTML = sec.href
+          ? `<h3 class="card__title"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`
+          : `<h3 class="card__title">${sec.title}</h3>`;
       }
 
       cards.push(`
@@ -426,7 +376,6 @@ const Custom_ContentLoader = {
         </article>
       `);
     });
-
     return `<div class="cards-4col">${cards.join('\n')}</div>`;
   },
 
@@ -443,9 +392,6 @@ const Custom_ContentLoader = {
     return null;
   },
 
-
-  // Resources section
-
   parseResourcesMd(text) {
     const bgRows          = [];
     const meetingSections = [];
@@ -457,8 +403,7 @@ const Custom_ContentLoader = {
 
       if (line.startsWith('### ')) {
         const heading = line.slice(4).trim();
-        const isBg    = heading.toLowerCase().includes('support for');
-        current = { title: heading, rows: [], isBg };
+        current = { title: heading, rows: [], isBg: heading.toLowerCase().includes('support for') };
         meetingSections.push(current);
         return;
       }
@@ -483,21 +428,18 @@ const Custom_ContentLoader = {
     const dlCell   = parts[2] || '';
 
     let type = iconCell.includes('pdf-icon') ? 'pdf' : 'ext';
-
     const nm = nameCell.match(/\*\*\[([^\]]+)\]\(([^)]+)\)\*\*/);
     if (!nm) return null;
+
     const name = nm[1].trim();
     const url  = nm[2].trim();
 
-    if      (/\.R\b/.test(url)  || name.toLowerCase().includes('r code'))    type = 'r';
-    else if (/\.Rmd\b/.test(url) || /r markdown/i.test(name) || /\brmd\b/i.test(name)) type = 'rmd';
-    else if (/\.html\b/.test(url) || /html/i.test(name)) type = 'html';
+    if      (/\.R\b/.test(url)   || name.toLowerCase().includes('r code'))                        type = 'r';
+    else if (/\.Rmd\b/.test(url) || /r markdown/i.test(name) || /\brmd\b/i.test(name))           type = 'rmd';
+    else if (/\.html\b/.test(url) || /html/i.test(name))                                          type = 'html';
 
-    let dlUrl = '';
     const dl = dlCell.match(/\[([^\]]+)\]\(([^)]+)\)/);
-    if (dl) dlUrl = dl[2].trim();
-
-    return { type, name, url, dlUrl };
+    return { type, name, url, dlUrl: dl ? dl[2].trim() : '' };
   },
 
   buildResourcesHTML(bgRows, meetingSections) {
@@ -505,7 +447,6 @@ const Custom_ContentLoader = {
     const twgSecs   = meetingSections.filter(s => !s.isBg);
     const allBgRows = [...bgRows, ...mpoxSecs.flatMap(s => s.rows)];
 
-    // ── Background Resources Grid ──────────────────────────────
     let gridHTML = '<div class="resources-grid reveal">';
     allBgRows.forEach(row => {
       const icon  = row.type === 'pdf' ? '📄' : '🌐';
@@ -523,7 +464,6 @@ const Custom_ContentLoader = {
     });
     gridHTML += '</div>';
 
-    // ── Meeting Materials Accordion ────────────────────────────
     let accordionHTML = '<div class="res-accordion reveal">';
     twgSecs.forEach(sec => {
       if (!sec.rows.length) return;
@@ -537,12 +477,11 @@ const Custom_ContentLoader = {
           </button>
           <div class="res-group__body">`;
       sec.rows.forEach(row => {
-        const badgeCls   = 'doc-badge-' + row.type;
-        const LABELS = { pdf: 'PDF', r: 'R', rmd: 'Rmd', html: 'HTML', ext: '&#8599;' };
+        const LABELS     = { pdf: 'PDF', r: 'R', rmd: 'Rmd', html: 'HTML', ext: '&#8599;' };
         const badgeLabel = LABELS[row.type] || row.type.toUpperCase();
         accordionHTML += `
             <div class="res-doc">
-              <span class="doc-badge ${badgeCls}">${badgeLabel}</span>
+              <span class="doc-badge doc-badge-${row.type}">${badgeLabel}</span>
               <span class="res-doc__name">
                 <a href="${row.url}" target="_blank" rel="noopener noreferrer">${row.name}</a>
               </span>
@@ -571,7 +510,6 @@ const Custom_ContentLoader = {
         body.style.maxHeight = isOpen ? '0' : body.scrollHeight + 'px';
       });
     });
-    // Open the most recent group by default
     const first = container.querySelector('.res-group');
     if (first) {
       const btn  = first.querySelector('.res-group__hd');
@@ -584,77 +522,36 @@ const Custom_ContentLoader = {
 
   async init() {
     try {
-      const [aboutMd, communityMd, newsMd, resourcesMd] = await Promise.all([
+      const [initiativeMd, communityMd, newsMd, resourcesMd] = await Promise.all([
         this.fetchText('assets/md/initiative.md'),
         this.fetchText('assets/md/community.md'),
         this.fetchText('assets/md/news.md'),
         this.fetchText('assets/md/resources.md'),
       ]);
 
-      // About
-      // const aboutEl = document.getElementById('about-cards');
-      // if (aboutEl) {
-      //   aboutEl.innerHTML = this.buildAbout(aboutMd);
-      //   this.reObserve(aboutEl);
-      // }
-
-      // Initiative
       const initEl = document.getElementById('initiative-4-cards');
       if (initEl) {
-        initEl.innerHTML = this.buildInitiative4Col(aboutMd);
+        initEl.innerHTML = this.buildInitiative4Col(initiativeMd);
         this.reObserve(initEl);
       }
+
       const initEl2 = document.getElementById('initiative-3-cards');
       if (initEl2) {
-        initEl2.innerHTML = this.buildInitiative3Col(aboutMd);
+        initEl2.innerHTML = this.buildInitiative3Col(initiativeMd);
         this.reObserve(initEl2);
       }
 
-      // Community
       const commEl = document.getElementById('community-cards');
       if (commEl) {
         commEl.innerHTML = this.buildCommunity(communityMd);
         this.reObserve(commEl);
       }
 
-
-      // About
-      // const aboutEl = document.getElementById('about-cards');
-      // if (aboutEl) {
-      //   aboutEl.innerHTML = this.buildAbout(aboutMd);
-      //   this.reObserve(aboutEl);
-      // }
-
-      // Resources
       const resEl = document.getElementById('resources-cards');
       if (resEl) {
         resEl.innerHTML = this.buildResources(resourcesMd);
         this.reObserve(resEl);
       }
-
-      // News
-      // const newsEl = document.getElementById('news-content');
-      // if (newsEl) {
-      //   newsEl.innerHTML = this.buildNews(newsMd);
-      //   this.reObserve(newsEl);
-      // }
-
-      // Resources
-      // // const { bgRows, meetingSections } = this.parseResourcesMd(resourcesMd);
-      // // const { gridHTML, accordionHTML }  = this.buildResourcesHTML(bgRows, meetingSections);
-
-      // // const bgEl = document.getElementById('res-bg-grid');
-      // // if (bgEl) {
-      // //   bgEl.innerHTML = gridHTML;
-      // //   this.reObserve(bgEl);
-      // // }
-
-      // // const meetEl = document.getElementById('res-meeting-acc');
-      // // if (meetEl) {
-      // //   meetEl.innerHTML = accordionHTML;
-      // //   this.initAccordion(meetEl);
-      // //   this.reObserve(meetEl);
-      // // }
 
     } catch (err) {
       console.error('[content-loader]', err);
