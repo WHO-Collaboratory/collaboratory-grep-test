@@ -39,7 +39,7 @@ const Custom_ContentLoader = {
       if (node.tagName === 'H3') {
         if (cur) result.push(cur);
 
-        let title = node.textContent.trim();
+        let title = node.innerHTML.trim();
         const linkEl = node.querySelector('a');
         const href = linkEl ? linkEl.getAttribute('href') : null;
 
@@ -48,7 +48,7 @@ const Custom_ContentLoader = {
           const match = title.match(/\{.*?custom\s*=\s*["'](.*?)["'].*?\}$/);
           if (match) {
             customProp = match[1];
-            title = title.replace(/\{.*\}$/, '').trim();
+            title = title.replace(/\s*\{.*\}$/, '').trim();
           }
         }
 
@@ -279,6 +279,12 @@ const Custom_ContentLoader = {
 
     return html;
   },
+  
+  buildInitiative5Col(md) {
+    const dom = this.mdDOM(md);
+    const secs = this.h3Sections(dom).filter(s => s.custom === '5Col');
+    return this.buildCardsFromIndexes5col(secs, [0, 1, 2, 3, 4]);
+  },
 
   buildInitiative4Col(md) {
     const dom = this.mdDOM(md);
@@ -350,6 +356,33 @@ const Custom_ContentLoader = {
       `);
     });
     return cards.join('\n');
+  },
+
+  buildCardsFromIndexes5col(secs, indexes) {
+    const cards = [];
+    indexes.forEach(i => {
+      const sec = this.findSecByIndex(secs, i);
+      if (!sec) return;
+
+      const tmp = document.createElement('div');
+      sec.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
+      this.replacePdfIframes(tmp);
+
+      let titleHTML = '';
+      if (sec.title !== 'NoTitle') {
+        titleHTML = sec.href
+          ? `<h3 class="card__title_w_icon"><a href="${sec.href}" target="_blank" rel="noopener noreferrer">${sec.title}</a></h3>`
+          : `<h3 class="card__title_w_icon">${sec.title}</h3>`;
+      }
+
+      cards.push(`
+        <article class="card reveal d1">
+          ${titleHTML}
+          <div class="card__text">${tmp.innerHTML}</div>
+        </article>
+      `);
+    });
+    return `<div class="cards-5col">${cards.join('\n')}</div>`;
   },
 
   buildCardsFromIndexes4col(secs, indexes) {
@@ -528,6 +561,12 @@ const Custom_ContentLoader = {
         this.fetchText('assets/md/news.md'),
         this.fetchText('assets/md/resources.md'),
       ]);
+      
+      const initEl0 = document.getElementById('initiative-5-cards');
+      if (initEl0) {
+        initEl0.innerHTML = this.buildInitiative5Col(initiativeMd);
+        this.reObserve(initEl0);
+      }
 
       const initEl = document.getElementById('initiative-4-cards');
       if (initEl) {
