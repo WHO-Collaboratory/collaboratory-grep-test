@@ -9,7 +9,7 @@
 <br>
 <br>
 
-<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a> is the global repository of epidemiological parameters hosted by the World Health Organization.
+<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a> is a living global repository of epidemiological parameters hosted by the World Health Organization.
 
 ### NoTitle
 
