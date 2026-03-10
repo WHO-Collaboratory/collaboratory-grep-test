@@ -52,16 +52,16 @@
 
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}
-Development of data taxonomy, data dictionary and model for the repository, and identification of priority parameters that are needed to inform decision making across various use cases as well as required contextual information for each parameter.
+<br>Development of data taxonomy, data dictionary and model for the repository, and identification of required contextual information for each parameter.
 
 ###  <span class="material-symbols-outlined">chip_extraction</span> W02 {custom="5Col"}
-Standardized methodologies and tools to extract parameters either retrospectively through literature review or in real-time through analysis of primary outbreak data.
+<br>Standardized methodologies and tools to extract parameters either retrospectively through literature review or in real-time through analysis of primary outbreak data.
 
 ###  <span class="material-symbols-outlined">storage</span> W03 {custom="5Col"}
-Identification of tools and approaches to support parameters storage in formats usable in analytical pipelines.
+<br>Identification of tools and approaches to support parameters storage in formats usable in analytical pipelines.
 
 ###  <span class="material-symbols-outlined">fact_check</span> W04 {custom="5Col"}
-Identification of mechanisms for validation and quality assurance of the parameters repository, as well as on sustainability models that support the continuous update of the parameters database.
+<br>Identification of mechanisms for validation and quality assurance of the parameters repository, and sustainability models that support its continuous updates.
 
 ###  <span class="material-symbols-outlined">award_star</span> W05 {custom="5Col"}
-Identification of mechanisms for recognition of authors and contributors, as well as other incentives mechanisms for sustained contribution.
+<br>Identification of mechanisms for recognition of authors and contributors, as well as other incentives mechanisms for sustained contribution.
