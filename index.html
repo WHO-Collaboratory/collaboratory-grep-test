@@ -300,6 +300,15 @@
     .about-text { display: flex; flex-direction: column; gap: 1.25rem; }
     .about-text .section__lead { font-weight: 400; font-size: 1rem; max-width: none; }
     .about-video iframe { width: 50%; border: 0; }
+    
+    .about-video-2 {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .about-video-2 iframe { width: 100%; height: 100%; border: 0; }
 
     /* — Community layout — */
     .community-layout {
@@ -902,6 +911,23 @@
             <img src="assets/AboutPic.png" alt="About" style="width:100%;border-radius:15px;border:1px solid var(--border);">
           </div>
         </div>
+        <div class="about-layout">
+          <div class="about-text">
+            <p class="section__lead">
+              Since the launch of the <a href="https://www.who.int/initiatives/collaboratory">Collaboratory initiative</a> by the <a href="https://pandemichub.who.int/">World Health Organization Hub for Pandemic and Epidemic Intelligence</a> in 2022., epidemiological parameters has been endorsed as one of key areas for convening a global Community of Practice that will interact together to pool resources, share knowledge, and co-create solutions to continuously improve existing practices, methodologies, supporting tools, data availability and quality.
+            </p>
+          </div>
+          <div class="about-video-2">            
+            <iframe
+              src="https://www.youtube.com/embed/4h-t42iCKI4?si=TgY4oLAYWjukum1P"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
       </header>
     </div>
   </section>
@@ -914,24 +940,14 @@
         <span class="eyebrow">Community of Practice</span>
         <h2 class="section__title">Epidemiological Parameters</h2>
         <div class="rule"></div>
-        <div class="community-layout">
+        <div class="xcommunity-layout">
           <div class="community-text">
-            <p class="section__lead">
+            <!-- <p class="section__lead">
               Since the launch of the <a href="https://www.who.int/initiatives/collaboratory">Collaboratory initiative</a> by the <a href="https://pandemichub.who.int/">World Health Organization Hub for Pandemic and Epidemic Intelligence</a> in 2022., epidemiological parameters has been endorsed as one of key areas for convening a global Community of Practice that will interact together to pool resources, share knowledge, and co-create solutions to continuously improve existing practices, methodologies, supporting tools, data availability and quality.
-            </p>
+            </p> -->
             <p class="section__lead">
               Epidemiological parameters Community of Practice is a global multidisciplinary consortium of mathematical modelers, epidemiologists, public health experts, data scientists and IT experts currently counting 100+ active members with a wide network of subject matter experts and enthusiasts that contribute to the specific aspects of the work of the Community.
             </p>
-          </div>
-          <div class="community-video">
-            <iframe
-              src="https://www.youtube.com/embed/4h-t42iCKI4?si=TgY4oLAYWjukum1P"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
-            </iframe>
           </div>
         </div>
       </header>
