@@ -370,7 +370,7 @@ ul  { list-style: none; }
 }
 .card1 .card__text img { padding: 0 !important;}
 .card1 .card__title { margin-bottom: 0.75rem; }
-.card1 .card__text  { flex: 1; }
+/* .card1 .card__text  { flex: 1; } */
 .card1:has(iframe), .card1:has(.card__pdf-preview), .card1:has(.card__text img) { padding: 0; overflow: hidden; }
 .card1::before {
   content: '';
