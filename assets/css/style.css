@@ -458,6 +458,7 @@ ul  { list-style: none; }
 .card__link:hover { gap: 0.6rem; color: var(--navy); }
 
 .card__pdf-preview {
+  border: 1px solid  var(--border);
   display: flex;
   flex-direction: column;
   align-items: center;
