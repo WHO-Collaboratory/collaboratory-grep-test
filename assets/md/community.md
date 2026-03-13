@@ -15,6 +15,9 @@
 
 Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition,dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
 <br>
+<br>
+<br>
+<br>
 <br>​
 <a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past webinar recordings and/or attend upcoming webinars. Please reach out to us at collaboratory@who.int to propose a webinar.
 
@@ -23,6 +26,7 @@ Regular webinars and online workshops provide a platform for sharing knowledge. 
 ### Hackatons {custom="3Col"}
 
 We like hackathons, virtual and in-person, as those provide a focused and collaborative space where our community members, partners and supporters work together intensively over a short period of time to develop practical solutions to shared challenges. Past hackatons provided essential inputs that shaped the project we are currently working on and enabled further collaboration, discussions and co-creation of joint outputs.
+<br>
 <br>
 <br>
 Everyone is encouraged to propose and lead virtual hackathons based on emerging challenges. Please reach out to us at collaboratory@who.int with your ideas on possible hackatons.
