@@ -6,6 +6,7 @@
 <p>
 <p align="center">
 <br>
+<br>
   <img src="assets/grepiFullLogo.png" width="600" align = "center">
 </p> 
 <br clear="left"/> 
