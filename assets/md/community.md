@@ -2,27 +2,24 @@
 
 ### GREP initiative 
 
-Global Repository of Epidemiological Parameters (GREP) initiative is working on building of a living global repository of epidemiological parameters (grEPI) to serve as a publicly accessible digital public good health which will provide a systematic, transparent, and reproducible dataset to better and faster understand heterogeneity and quality in reporting and the context from which epidemiological parameters were derived.
-
-### Webinars
-
-Designing, building and maintaining of a living curated global repository of epidemiological parameters available as a digital public good for health for everyone to consult, use and contribute to.
-<br>
-<a href="https://who-collaboratory.github.io/collaboratory-grep-test/#initiative"> Learn more...</a>
-<br>
-<br>
+Global Repository of Epidemiological Parameters (GREP) initiative is focusing on implementation of a living global repository of epidemiological parameters (grEPI) to serve as a publicly accessible digital public good health which will provide a systematic, transparent, and reproducible dataset to better and faster understand heterogeneity and quality in reporting and the context from which epidemiological parameters were derived. <a href="https://who-collaboratory.github.io/collaboratory-grep-test/#initiative"> Learn more...</a>
 <br>
 <br>
 <p align="center">
   <img src="assets/grepiFullLogo.png" width="600" align = "center">
-</p> 
+</p>
 <br>
-<p>
-  <a href="https://collaboratory.who.int/epidemiologicalparameters/repository">Go to grEPI</a>
-</p> 
+<a href="https://collaboratory.who.int/epidemiologicalparameters/repository"> Learn more...</a>
+
+### Webinars
+
+Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition,dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
+​
+<a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past recordings or attend upcoming webinars.
 
 <br clear="left"/> 
 
 ### Hackatons 
 
-This is an inclusive community opened to all who are interested in connecting, collaborating, learning, sharing insigts, resources, tools, best practices, thoughts and ideas with us in the epidemiological parameters area. If you would like to become a member of our community, you can do so by joining our discussions, accessing various resources such as webinar recordings <a href="https://collaboratory.who.int/forum/c/epiparameter/6"> in our dedicated space in Collaboratory discussion forum</a> after creating your Collaboratory account (<a href="https://www.who.int/initiatives/collaboratory">Sign Up instructions</a>). You can also reach out to us at collaboratory@who.int.
+Hackathons can provide a focusedand collaborative space where participants work intensively over a short period of time to develop practical solutions to shared challenges.  For example, we co-organized a hackathon with LSHTM that brought together experts from across the community to co-create reusable analytical code designed to speed up predictable analytical tasks at the start of an outbreak. Members of the CoP are encouraged to propose and lead virtual hackathons based on
+emerging needs and priorities.​
