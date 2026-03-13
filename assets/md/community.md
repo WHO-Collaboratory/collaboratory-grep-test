@@ -9,11 +9,12 @@ Global Repository of Epidemiological Parameters (GREP) initiative is focusing on
 Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition,dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
 <br>
 <br>​
-<a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past webinar recordings or attend upcoming webinars.
+<a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past webinar recordings and/or attend upcoming webinars. Please reach out to us at collaboratory@who.int to propose a webinar.
 
 <br clear="left"/> 
 
 ### Hackatons 
 
-Hackathons can provide a focusedand collaborative space where participants work intensively over a short period of time to develop practical solutions to shared challenges.  For example, we co-organized a hackathon with LSHTM that brought together experts from across the community to co-create reusable analytical code designed to speed up predictable analytical tasks at the start of an outbreak. Members of the CoP are encouraged to propose and lead virtual hackathons based on
-emerging needs and priorities.​
+We like hackathons, virtual and in-person, as those provide a focused and collaborative space where our community members, partners and supporters work together intensively over a short period of time to develop practical solutions to shared challenges. Past hackatons provided essential inputs that shaped the project we are currently working on and enabled further collaboration, discussions and co-creation of joint outputs. Everyone is encouraged to propose and lead virtual hackathons based on emerging challenges.
+
+Please reach out to us at collaboratory@who.int with your ideas on possible hackatons.​
