@@ -44,11 +44,11 @@
 ### NoTitle {custom="3Col"}
 <iframe src="https://www.youtube.com/embed/VvpYHhFDIjI?si=3iKqFJC69vnV32zl%22" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-### NoTitle {custom="3Col"}
-<iframe src="https://www.youtube.com/embed/KsJ9iyBrCag?si=x2M8oWBBMaWVKw7Q%22" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<!-- ### NoTitle {custom="3Col"}
+<!-- <iframe src="https://www.youtube.com/embed/KsJ9iyBrCag?si=x2M8oWBBMaWVKw7Q%22" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
-### NoTitle {custom="3Col"}
-<iframe src="assets/docs/Doc_Init01.pdf#page=1" loading="lazy">2023-06 Survey - EpiParameters CoP - GREP desired data model</iframe>
+<!-- ### NoTitle {custom="3Col"}
+<iframe src="assets/docs/Doc_Init01.pdf#page=1" loading="lazy">2023-06 Survey - EpiParameters CoP - GREP desired data model</iframe> -->
 
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}

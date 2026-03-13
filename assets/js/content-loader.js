@@ -206,20 +206,12 @@ const Custom_ContentLoader = {
     const res = this.findSecByIndex(secs, 0);
     if (res) {
       const paras = res.nodes.filter(n => n.tagName === 'P');
-      if (paras[0]) {
         cards.push(`
           <article class="card1 reveal d1">
             <h3 class="card__title">${res.title}</h3>
             <div class="card__text">${paras[0].innerHTML}</div>
+            <div class="card__text1">${paras[2].outerHTML}</div>
           </article>`);
-      }
-      if (paras[1]) {
-        cards.push(`
-          <article class="card1 reveal d2">
-            <h3 class="card__title">Our Global Network</h3>
-            <div class="card__text">${paras[1].innerHTML}</div>
-          </article>`);
-      }
     }
 
     const activities = this.findSecByIndex(secs, 1);
@@ -245,10 +237,9 @@ const Custom_ContentLoader = {
     const grepiInit = this.findSecByIndex(secs, 3);
     if (grepiInit) {
       const paras = grepiInit.nodes;
-      console.log(paras[0].innerHTML);
       cards.push(`
         <article class="card1 reveal d3">
-          <div class="card__text">${paras[0].outerHTML}</div>
+          <div class="card__text"><a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">${paras[0].outerHTML}</a></div>
         </article>`);
     }
     
