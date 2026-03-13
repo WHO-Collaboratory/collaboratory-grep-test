@@ -27,7 +27,39 @@ const Custom_ContentLoader = {
     tmp.querySelectorAll('img').forEach(i => i.remove());
     return tmp.innerHTML;
   },
+  h2Sections(dom) {
+    const result = [];
+    let cur = null;
 
+    for (const node of dom.childNodes) {
+      if (node.nodeType !== 1) continue;
+
+      if (node.tagName === 'H2') {
+        if (cur) result.push(cur);
+
+        let title = node.innerHTML.trim();
+        const linkEl = node.querySelector('a');
+        const href = linkEl ? linkEl.getAttribute('href') : null;
+
+        let customProp = node.getAttribute('data-custom') || null;
+        if (!customProp) {
+          const match = title.match(/\{.*?custom\s*=\s*["'](.*?)["'].*?\}$/);
+          if (match) {
+            customProp = match[1];
+            title = title.replace(/\s*\{.*\}$/, '').trim();
+          }
+        }
+
+        cur = { title, href, custom: customProp, nodes: [] };
+
+      } else if (cur) {
+        cur.nodes.push(node.cloneNode(true));
+      }
+    }
+
+    if (cur) result.push(cur);
+    return result;
+  },
   h3Sections(dom) {
     const result = [];
     let cur = null;
@@ -212,10 +244,34 @@ const Custom_ContentLoader = {
 
     const grepiInit = this.findSecByIndex(secs, 3);
     if (grepiInit) {
+      const paras = grepiInit.nodes;
+      console.log(paras[0].innerHTML);
       cards.push(`
-        <article class="card1 card1--wide reveal d5">
-          <h3 class="card__title">${grepiInit.title}</h3>
-          <img src="assets/TWG.png" alt="Community Technical Working Group members" class="card__img" />
+        <article class="card1 reveal d3">
+          <div class="card__text">${paras[0].outerHTML}</div>
+        </article>`);
+    }
+    
+    const grepiInit1 = this.findSecByIndex(secs, 4);
+    if (grepiInit1) {
+      const paras = grepiInit1.nodes;
+      const tmp = document.createElement('div');
+      grepiInit1.nodes.forEach(n => tmp.appendChild(n.cloneNode(true)));
+      this.replacePdfIframes(tmp);
+      console.log(paras[0].innerHTML);
+      cards.push(`
+        <article class="card1 reveal d3">
+          <div class="card__text">${tmp.outerHTML}</div>
+        </article>`);
+    }
+    
+    const grepiInit2 = this.findSecByIndex(secs, 5);
+    if (grepiInit2) {
+      const paras = grepiInit2.nodes;
+      console.log(paras[0].innerHTML);
+      cards.push(`
+        <article class="card1 reveal d3"">
+          <div class="card__text">${paras[0].outerHTML}</div>
         </article>`);
     }
 

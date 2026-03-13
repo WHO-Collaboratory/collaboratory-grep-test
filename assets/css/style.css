@@ -368,9 +368,10 @@ ul  { list-style: none; }
   flex-direction: column;
   transition: transform 0.3s var(--ease), border-color 0.3s ease, box-shadow 0.3s ease;
 }
+.card1 .card__text img { padding: 0 !important;}
 .card1 .card__title { margin-bottom: 0.75rem; }
 .card1 .card__text  { flex: 1; }
-.card1:has(iframe), .card1:has(.card__pdf-preview) { padding: 0; overflow: hidden; }
+.card1:has(iframe), .card1:has(.card__pdf-preview), .card1:has(.card__text img) { padding: 0; overflow: hidden; }
 .card1::before {
   content: '';
   position: absolute;
