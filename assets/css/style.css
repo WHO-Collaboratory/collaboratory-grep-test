@@ -291,6 +291,7 @@ ul  { list-style: none; }
   margin-top: 2rem;
 }
 .about-layout-top .section__lead a { color: #0070c0; text-decoration: underline; }
+.about-layout .section__lead a { color: #0070c0; text-decoration: underline; }
 .about-text { display: flex; flex-direction: column; gap: 1.25rem; }
 .about-text .section__lead { font-weight: 400; font-size: 1rem; max-width: none; }
 .about-video iframe { width: 50%; border: 0; }
