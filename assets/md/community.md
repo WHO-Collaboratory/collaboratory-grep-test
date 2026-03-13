@@ -9,7 +9,7 @@ Global Repository of Epidemiological Parameters (GREP) initiative is focusing on
 Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition,dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
 <br>
 <br>​
-<a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past recordings or attend upcoming webinars.
+<a href="https://collaboratory.who.int/forum/c/epiparameter/6">Join Collaboratory</a> to access past webinar recordings or attend upcoming webinars.
 
 <br clear="left"/> 
 
