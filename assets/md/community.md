@@ -14,7 +14,7 @@
 
 ### Webinars {custom="3Col"}
 
-Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition,dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
+Regular webinars and online workshops provide a platform for sharing knowledge. These sessions also facilitate networking and collaboration among participants. In addition, dedicated workshops have been organized to support specific initiatives, such as the development of grEPI and consultations with subject matter experts.​
 <br>
 <br>
 <br>
