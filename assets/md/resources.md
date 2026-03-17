@@ -7,9 +7,7 @@
 </p> 
 
 <br>
-<br>
-
-<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a> is a living global repository of epidemiological parameters hosted by the World Health Organization.
+<p style="padding: 2rem 1.75rem;"><a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a> is a living global repository of epidemiological parameters hosted by the World Health Organization.</p>
 
 ### NoTitle
 
@@ -18,8 +16,7 @@
 </p> 
 
 <br>
-
-<br><a href="https://mrc-ide.github.io/epireview/" target="_blank" rel="noopener noreferrer">epireview</a> is a tool to obtain the latest data, figures and tables from the Pathogen Epidemiology Review Group (PERG).This package also contains functions to update pathogen-specific databases with new data from peer-reviewed papers as they become available.
+<p style="padding: 2rem 1.75rem;"><a href="https://mrc-ide.github.io/epireview/" target="_blank" rel="noopener noreferrer">epireview</a> is a tool to obtain the latest data, figures and tables from the Pathogen Epidemiology Review Group (PERG).This package also contains functions to update pathogen-specific databases with new data from peer-reviewed papers as they become available.</p>
 
 ### NoTitle
 
@@ -28,9 +25,7 @@
 </p> 
 
 <br>
-<br>
-
-<a href="https://epiverse-trace.github.io/epiparameter/" target="_blank" rel="noopener noreferrer">epiparameter</a>  is an R package that contains a library of epidemiological parameters for infectious diseases as well as classes and helper functions to work with the data.
+<p style="padding: 2rem 1.75rem;"><a href="https://epiverse-trace.github.io/epiparameter/" target="_blank" rel="noopener noreferrer">epiparameter</a>  is an R package that contains a library of epidemiological parameters for infectious diseases as well as classes and helper functions to work with the data.</p>
 
 ### [Systematic review of epidemiological parameters for measles](https://doi.org/10.17605/OSF.IO/7K4GU)
 <br>Public Health Agency of Canada (PHAC)
