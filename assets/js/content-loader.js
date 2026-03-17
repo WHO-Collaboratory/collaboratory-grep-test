@@ -342,7 +342,7 @@ const Custom_ContentLoader = {
   buildInitiative3Col(md) {
     const dom = this.mdDOM(md);
     const secs = this.h3Sections(dom).filter(s => s.custom === '3Col');
-    return this.buildCardsFromIndexes(secs, [0, 1, 2]);
+    return this.buildCardsFromIndexes(secs, [0, 1, 2], true);
   },
 
   buildResources(md) {
@@ -378,7 +378,7 @@ const Custom_ContentLoader = {
     });
   },
 
-  buildCardsFromIndexes(secs, indexes) {
+  buildCardsFromIndexes(secs, indexes, withBorder = false) {
     const cards = [];
     indexes.forEach(i => {
       const sec = this.findSecByIndex(secs, i);
@@ -396,7 +396,7 @@ const Custom_ContentLoader = {
       }
 
       cards.push(`
-        <article class="card1 reveal d1">
+        <article class="${withBorder ? 'card' : 'card1'} reveal d1">
           ${titleHTML}
           <div class="card__text">${tmp.innerHTML}</div>
         </article>
@@ -404,6 +404,7 @@ const Custom_ContentLoader = {
     });
     return cards.join('\n');
   },
+  
 
   buildCardsFromIndexes5col(secs, indexes) {
     const cards = [];

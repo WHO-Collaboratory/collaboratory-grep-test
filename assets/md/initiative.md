@@ -41,27 +41,33 @@
 - ● <a href="https://ch.linkedin.com/in/patriciandumbi" target="_blank">Patricia Ndumbi</a>
 - ● <a href="https://de.linkedin.com/in/finlay-campbell-70b6a1aa" target="_blank">Finlay Campbell</a>
 
-### NoTitle {custom="3Col"}
-<iframe src="https://www.youtube.com/embed/VvpYHhFDIjI?si=3iKqFJC69vnV32zl%22" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+### Global challenge {custom="3Col"}
+<p>A major challenge to developing informed public health interventions and maintaining up to date mathematical models, especially for emerging and re-emerging diseases, is that the existing epidemiological parameter estimates are mostly accessible through the literature and scattered throughout different sources which are often outdated, contextually opaque and lack standardized reporting. As parameters can change over time, the identification of reliable parameter estimates often requires ongoing literature review as new information arises which is time-consuming and not feasible for every researcher to always stay up to date on literature.</p>
 
-<!-- ### NoTitle {custom="3Col"}
-<!-- <iframe src="https://www.youtube.com/embed/KsJ9iyBrCag?si=x2M8oWBBMaWVKw7Q%22" title="" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
+### Global need {custom="3Col"}
+<p>Currently, there is no central living repository of epidemiological parameters that the global modeling community can access, use, and contribute to which would provide a systematic, transparent and reproducible dataset to better and faster understand heterogeneity and quality in reporting and the context from which epidemiological parameters were derived. This would save researchers time by streamlining the identification of relevant parameters in the literature. In addition, it would facilitate more informed discussions about parameter selection and their use in mathematical models.</p>
 
-<!-- ### NoTitle {custom="3Col"}
-<iframe src="assets/docs/Doc_Init01.pdf#page=1" loading="lazy">2023-06 Survey - EpiParameters CoP - GREP desired data model</iframe> -->
-
+### Our Goal {custom="3Col"}
+<p>To provide  a publicly accessible living global repository of epidemiological parameters (<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>) as a digital public good for health that will help inform and guide public health interventions designed to mitigate the spread of diseases and reduce their impact on affected populations, and facilitate decision making and enable effective response to public health risks.</p>
+<br>
+<p>While World Health Organization provides hosting of services for <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, this entire initiative  is led by the Core Technical Working Group, and outputs are being collaboratively designed, built and maintained by the community.</p>
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}
-<br>Development of data taxonomy, data dictionary and model for the repository, and identification of required contextual information for each parameter.
+<p class="third_title">Data Framework</p>
+<p>Development of data taxonomy, data dictionary and model for the repository, and identification of required contextual information for each parameter.</p>
 
 ###  <span class="material-symbols-outlined">chip_extraction</span> W02 {custom="5Col"}
-<br>Standardized methodologies and tools to extract parameters either retrospectively through literature review or in real-time through analysis of primary outbreak data.
+<p class="third_title">Data Extraction</p>
+<p>Standardized methodologies and tools to extract parameters either retrospectively through literature review or in real-time through analysis of primary outbreak data.</p>
 
 ###  <span class="material-symbols-outlined">storage</span> W03 {custom="5Col"}
-<br>Identification of tools and approaches to support parameters storage in formats usable in analytical pipelines.
+<p class="third_title">Storage & Integration</p>
+<p>Identification of tools and approaches to support parameters storage in formats usable in analytical pipelines.</p>
 
 ###  <span class="material-symbols-outlined">fact_check</span> W04 {custom="5Col"}
-<br>Identification of mechanisms for validation and quality assurance of the parameters repository, and sustainability models that support its continuous updates.
+<p class="third_title">Quality Assurance</p>
+<p>Identification of mechanisms for validation and quality assurance of the parameters repository, and sustainability models that support its continuous updates.</p>
 
 ###  <span class="material-symbols-outlined">award_star</span> W05 {custom="5Col"}
-<br>Identification of mechanisms for recognition of authors and contributors, as well as other incentives mechanisms for sustained contribution.
+<p class="third_title">Recognition</p>
+<p>Identification of mechanisms for recognition of authors and contributors, as well as other incentives mechanisms for sustained contribution.</p>
