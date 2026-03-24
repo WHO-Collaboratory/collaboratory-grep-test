@@ -1,6 +1,6 @@
 ### NoTitle {custom="4Col"}
 <p align="center" style="padding-bottom: 10px;"><img src="assets/ImperialCollegeLondonLogo.png" width="600" align = "center">
-<span style="position: absolute;top: 95px;left:0%;width:100%;font-size:12px;padding-bottom: 20px;"><a href="https://profiles.imperial.ac.uk/a.cori" target="_blank">Pathogen Epidemiology Review Group </a></span></p>
+<span style="position: absolute;top: 95px;left:0%;width:100%;font-size:12px;padding-bottom: 20px;"><a href="https://www.imperial.ac.uk/mrc-global-infectious-disease-analysis/related-initiatives/perg/#" target="_blank">Pathogen Epidemiology Review Group </a></span></p>
 
 - ● <a href="https://profiles.imperial.ac.uk/a.cori" target="_blank">Anne Cori</a>
 - ● <a href="https://profiles.imperial.ac.uk/ruth.mccabe17" target="_blank">Ruth McCabe</a>
