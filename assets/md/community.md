@@ -33,7 +33,7 @@ We like hackathons, virtual and in-person, as those provide a focused and collab
 Everyone is encouraged to propose and lead virtual hackathons based on emerging challenges. Please reach out to us at collaboratory@who.int with your ideas on possible hackatons.
 
 ### NoTitle {custom="3Col"}
-<img src="assets/grepiScreenshot.png" style="width:100%;height:100%;border-radius:15px;border:1px solid var(--border);">
+<img src="assets/grepiScreenshot.png" style="width:100%;height:280px;border-radius:15px;border:1px solid var(--border);">
 
 ### NoTitle {custom="3Col"}
 <iframe src="assets/docs/Doc_Init01.pdf#page=1" loading="lazy">2023-06 Survey - EpiParameters CoP - GREP desired data model</iframe>
