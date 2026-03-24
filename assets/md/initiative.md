@@ -1,9 +1,6 @@
 ### NoTitle {custom="4Col"}
-<p align="center">
-  <img src="assets/ImperialCollegeLondonLogo.png" width="600" align = "center">
-</p> 
-<br>
-<br>
+<p align="center" style="padding-bottom: 10px;"><img src="assets/ImperialCollegeLondonLogo.png" width="600" align = "center">
+<span style="position: absolute;top: 95px;left:0%;width:100%;font-size:12px;padding-bottom: 20px;"><a href="https://profiles.imperial.ac.uk/a.cori" target="_blank">Pathogen Epidemiology Review Group </a></span></p>
 
 - ● <a href="https://profiles.imperial.ac.uk/a.cori" target="_blank">Anne Cori</a>
 - ● <a href="https://profiles.imperial.ac.uk/ruth.mccabe17" target="_blank">Ruth McCabe</a>
@@ -53,21 +50,21 @@
 <p>While World Health Organization provides hosting of services for <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, this entire initiative  is led by the Core Technical Working Group, and outputs are being collaboratively designed, built and maintained by the community.</p>
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}
-<p class="third_title">Data Framework</p>
+<p class="third_title" style="white-space: nowrap;">Data Framework</p>
 <p>Development of data taxonomy, data dictionary and model for the repository, and identification of required contextual information for each parameter.</p>
 
 ###  <span class="material-symbols-outlined">chip_extraction</span> W02 {custom="5Col"}
-<p class="third_title">Data Extraction</p>
+<p class="third_title" style="white-space: nowrap;">Data Extraction</p>
 <p>Standardized methodologies and tools to extract parameters either retrospectively through literature review or in real-time through analysis of primary outbreak data.</p>
 
 ###  <span class="material-symbols-outlined">storage</span> W03 {custom="5Col"}
-<p class="third_title">Storage & Integration</p>
+<p class="third_title" style="white-space: nowrap;">Storage & Integration</p>
 <p>Identification of tools and approaches to support parameters storage in formats usable in analytical pipelines.</p>
 
 ###  <span class="material-symbols-outlined">fact_check</span> W04 {custom="5Col"}
-<p class="third_title">Quality Assurance</p>
+<p class="third_title" style="white-space: nowrap;">Quality Assurance</p>
 <p>Identification of mechanisms for validation and quality assurance of the parameters repository, and sustainability models that support its continuous updates.</p>
 
 ###  <span class="material-symbols-outlined">award_star</span> W05 {custom="5Col"}
-<p class="third_title">Recognition</p>
+<p class="third_title" style="white-space: nowrap;">Recognition</p>
 <p>Identification of mechanisms for recognition of authors and contributors, as well as other incentives mechanisms for sustained contribution.</p>
