@@ -239,7 +239,7 @@ const Custom_ContentLoader = {
       const paras = grepiInit.nodes;
       cards.push(`
         <article class="card1 reveal d3">
-          <div class="card__text"><a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">${paras[0].outerHTML}</a></div>
+          <div class="card__text"><a href="https://who-collaboratory.github.io/collaboratory-grepi-web/" target="_blank" rel="noopener noreferrer">${paras[0].outerHTML}</a></div>
         </article>`);
     }
     
