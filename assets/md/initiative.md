@@ -47,7 +47,7 @@
 ### Our Goal {custom="3Col"}
 <p>To provide  a publicly accessible living global repository of epidemiological parameters (<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>) as a digital public good for health that supports public health interventions, decision making and responses to public health risks.</p>
 <br>
-<p>While World Health Organization provides hosting of services for <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, this entire initiative  is led by the Core Technical Working Group, and outputs are being collaboratively designed, built and maintained by the Epidemiological Parameters community of practice.</p>
+<p>While World Health Organization hosts <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, the entire initiative is led by the GREP Core Technical Working Group  with outputs collaboratively designed, built, and maintained by the Epidemiological Parameters community of practice. </p>
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}
 <p class="third_title" style="white-space: nowrap;">Data Framework</p>
