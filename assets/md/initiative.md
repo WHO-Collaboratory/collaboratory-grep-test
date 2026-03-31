@@ -23,9 +23,9 @@
 
 <br>
 
-- ● <a href="https://www.researchgate.net/profile/Lisa-Waddell-5" target="_blank">Lisa Waddell</a>
-- ● <a href="https://www.researchgate.net/profile/Tricia-Corrin" target="_blank">Tricia Corrin</a>
-- ● <a href="https://www.researchgate.net/profile/Kusala-Pussegoda" target="_blank">Kusala Pussegoda</a>
+- ● <a href="https://www.linkedin.com/in/lisa-waddell-219b612a/" target="_blank">Lisa Waddell</a>
+- ● <a href="https://www.linkedin.com/in/triciacorrin/" target="_blank">Tricia Corrin</a>
+- ● <a href="https://www.linkedin.com/in/kusala-pussegoda-a0998225/" target="_blank">Kusala Pussegoda</a>
 
 ### NoTitle {custom="4Col"}
 <p align="center">
