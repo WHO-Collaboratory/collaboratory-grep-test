@@ -46,10 +46,10 @@ consuming literature review, making it difficult for researchers to remain consi
 ### Global need {custom="3Col"}
 <p>Currently, there is no central living repository of epidemiological parameters that everyone can access, use, and contribute to. Such a repository would provide a systematic, transparent and reproducible dataset to better and faster understand heterogeneity and quality in reporting and the context from which epidemiological parameter estimates were derived. This would save time by streamlining the identification of relevant parameters. In addition, it would facilitate more informed discussions about parameter selection and their use in guiding public health interventions.</p>
 
-### Our Goal {custom="3Col"}
+<!-- ### Our Goal {custom="3Col"}
 <p>To provide  a publicly accessible living global repository of epidemiological parameters (<a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>) as a digital public good for health that supports public health interventions, decision making and responses to public health risks.</p>
 <br>
-<p>While World Health Organization hosts <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, the entire initiative is led by the GREP Core Technical Working Group  with outputs collaboratively designed, built, and maintained by the Epidemiological Parameters community of practice. </p>
+<p>While World Health Organization hosts <a href="https://collaboratory.who.int/epidemiologicalparameters/repository" target="_blank" rel="noopener noreferrer">grEPI</a>, the entire initiative is led by the GREP Core Technical Working Group  with outputs collaboratively designed, built, and maintained by the Epidemiological Parameters community of practice. </p>-->
 
 ### <span class="material-symbols-outlined">graph_5</span> W01 {custom="5Col"}
 <p class="third_title" style="white-space: nowrap;">Data Framework</p>
