@@ -890,6 +890,8 @@ ul  { list-style: none; }
 .ftr-banner__text {
   font-size: 0.92rem;
   line-height: 1.7;
-  color: rgba(255,255,255,0.8);
+  color: white;
   max-width: 55ch;
+  font-weight: 600;
+  text-shadow: #00205C 0px 2px 8px;
 }
